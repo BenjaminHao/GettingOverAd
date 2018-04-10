@@ -64,6 +64,8 @@ class Platforms:SKNode
         platformSprite.physicsBody!.collisionBitMask = BodyType.player.rawValue | BodyType.enemy.rawValue
         if ( isFirst == false ) {
             createObstacle()
+        } else {
+            platformSprite.physicsBody!.categoryBitMask = BodyType.platformUsed.rawValue
         }
     }
     

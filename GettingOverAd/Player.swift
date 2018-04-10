@@ -59,6 +59,7 @@ class Player: SKSpriteNode
         body.categoryBitMask = BodyType.player.rawValue
         body.contactTestBitMask = BodyType.platform.rawValue | BodyType.platformUsed.rawValue | BodyType.enemy.rawValue
         body.collisionBitMask = BodyType.enemy.rawValue | BodyType.platform.rawValue | BodyType.platformUsed.rawValue
+        body.usesPreciseCollisionDetection = true
         self.physicsBody = body;
         self.zPosition = 10;
 

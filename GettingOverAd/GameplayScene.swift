@@ -55,6 +55,8 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     var screenHeight:CGFloat = 0
     var isDead:Bool = false
     var usedPlatform:Bool = false
+    var currentPlatform:SKSpriteNode?
+    var currentPF:Platforms?
     
     var touched:Bool = false;
     var runOnce:Bool = true;
@@ -630,12 +632,24 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             else if dy == 0 && dx == 0 && statusChanged != 3
             {
                 thePlayer.startIdle()
+                if currentPlatform?.physicsBody?.categoryBitMask == BodyType.platform.rawValue
+                {
+                    score = score + 1 + bonus
+                    jumpedPlatform += 1
+                    currentPlatform?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+                }
                 statusChanged = 3
 
             }
             else if dy == 0 && dx != 0 && statusChanged != 4
             {
                 thePlayer.startRun()
+                if currentPlatform?.physicsBody?.categoryBitMask == BodyType.platform.rawValue
+                {
+                    score = score + 1 + bonus
+                    jumpedPlatform += 1
+                    currentPlatform?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+                }
                 statusChanged = 4
             }
         }
@@ -698,9 +712,14 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         if (contact.bodyA.categoryBitMask == BodyType.player.rawValue &&
             contact.bodyB.categoryBitMask == BodyType.platform.rawValue)
         {
-            score = score + 1 + bonus
-            jumpedPlatform += 1
-            contact.bodyB.node?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+            //if thePlayer.position.y > contact.contactPoint.y + thePlayer.size.height/2
+            //{
+//                score = score + 1 + bonus
+//                jumpedPlatform += 1
+//                contact.bodyB.node?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+            //}
+            currentPlatform =  contact.bodyB.node! as? SKSpriteNode
+
             if contact.bodyB.node?.frame.size.width == 150
             {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5)
@@ -715,9 +734,14 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         else if (contact.bodyA.categoryBitMask == BodyType.platform.rawValue &&
             contact.bodyB.categoryBitMask == BodyType.player.rawValue)
         {
-            score = score + 1 + bonus
-            jumpedPlatform += 1
-            contact.bodyA.node?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+            //if thePlayer.position.y > contact.contactPoint.y + thePlayer.size.height/2
+            //{
+//                score = score + 1 + bonus
+//                jumpedPlatform += 1
+//                contact.bodyA.node?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+            //}
+            currentPlatform =  contact.bodyA.node! as? SKSpriteNode
+
             if contact.bodyA.node?.frame.size.width == 150
             {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5)
