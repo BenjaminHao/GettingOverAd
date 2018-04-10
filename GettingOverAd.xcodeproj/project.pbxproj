@@ -7,27 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432FC5072028730800A6C8BF /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 432FC5062028730800A6C8BF /* GameplayScene.sks */; };
+		432FC50B2028736300A6C8BF /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC50A2028736300A6C8BF /* GameplayScene.swift */; };
+		432FC51120287A7100A6C8BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 432FC51020287A7100A6C8BF /* Assets.xcassets */; };
+		434A6E44205B53EA00D3E343 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A6E43205B53EA00D3E343 /* Platforms.swift */; };
 		43CD026D2024D8F4009C8980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD026C2024D8F4009C8980 /* AppDelegate.swift */; };
-		43CD026F2024D8F4009C8980 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 43CD026E2024D8F4009C8980 /* GameScene.sks */; };
-		43CD02712024D8F4009C8980 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 43CD02702024D8F4009C8980 /* Actions.sks */; };
-		43CD02732024D8F4009C8980 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD02722024D8F4009C8980 /* GameScene.swift */; };
 		43CD02752024D8F4009C8980 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD02742024D8F4009C8980 /* GameViewController.swift */; };
 		43CD02782024D8F4009C8980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD02762024D8F4009C8980 /* Main.storyboard */; };
-		43CD027A2024D8F4009C8980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CD02792024D8F4009C8980 /* Assets.xcassets */; };
 		43CD027D2024D8F4009C8980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD027B2024D8F4009C8980 /* LaunchScreen.storyboard */; };
+		43DC6CF22044D67F00BE3CF9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC6CF12044D67F00BE3CF9 /* Player.swift */; };
+		43DC6CF7204564EC00BE3CF9 /* Enemy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */; };
+		43DC6CF8204564EC00BE3CF9 /* Player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6CF6204564EC00BE3CF9 /* Player.atlas */; };
+		43DC6CFA20456C1200BE3CF9 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC6CF920456C1200BE3CF9 /* Object.swift */; };
+		43DC6CFC204572D500BE3CF9 /* FX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6CFB204572D500BE3CF9 /* FX.atlas */; };
+		43DC6D3E204F5B8F00BE3CF9 /* Virus.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */; };
+		58136B5741D5D4EB6BA1D1B6 /* Pods_GettingOverAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B96E44AE6DCAB80148A669 /* Pods_GettingOverAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37821E2F5B1E9D5CEE7D1621 /* Pods-GettingOverAd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettingOverAd.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd.release.xcconfig"; sourceTree = "<group>"; };
+		432FC5062028730800A6C8BF /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
+		432FC50A2028736300A6C8BF /* GameplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
+		432FC51020287A7100A6C8BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		434A6E43205B53EA00D3E343 /* Platforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platforms.swift; sourceTree = "<group>"; };
 		43CD02692024D8F3009C8980 /* GettingOverAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingOverAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD026C2024D8F4009C8980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43CD026E2024D8F4009C8980 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		43CD02702024D8F4009C8980 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		43CD02722024D8F4009C8980 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		43CD02742024D8F4009C8980 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		43CD02772024D8F4009C8980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43CD02792024D8F4009C8980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CD027C2024D8F4009C8980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CD027E2024D8F4009C8980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43DC6CF12044D67F00BE3CF9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy.atlas; sourceTree = "<group>"; };
+		43DC6CF6204564EC00BE3CF9 /* Player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player.atlas; sourceTree = "<group>"; };
+		43DC6CF920456C1200BE3CF9 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		43DC6CFB204572D500BE3CF9 /* FX.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = FX.atlas; sourceTree = "<group>"; };
+		43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Virus.atlas; sourceTree = "<group>"; };
+		90B1D9C87A6B73FE4FA52BCC /* Pods-GettingOverAd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettingOverAd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd.debug.xcconfig"; sourceTree = "<group>"; };
+		B7B96E44AE6DCAB80148A669 /* Pods_GettingOverAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettingOverAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58136B5741D5D4EB6BA1D1B6 /* Pods_GettingOverAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +63,8 @@
 			children = (
 				43CD026B2024D8F3009C8980 /* GettingOverAd */,
 				43CD026A2024D8F3009C8980 /* Products */,
+				608387C059F748D1198CA20C /* Pods */,
+				A2281D5CADB6FE90218EFAC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +79,40 @@
 		43CD026B2024D8F3009C8980 /* GettingOverAd */ = {
 			isa = PBXGroup;
 			children = (
+				43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */,
+				43DC6CFB204572D500BE3CF9 /* FX.atlas */,
+				43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */,
+				43DC6CF6204564EC00BE3CF9 /* Player.atlas */,
+				432FC5062028730800A6C8BF /* GameplayScene.sks */,
+				43DC6CF12044D67F00BE3CF9 /* Player.swift */,
+				432FC50A2028736300A6C8BF /* GameplayScene.swift */,
 				43CD026C2024D8F4009C8980 /* AppDelegate.swift */,
-				43CD026E2024D8F4009C8980 /* GameScene.sks */,
-				43CD02702024D8F4009C8980 /* Actions.sks */,
-				43CD02722024D8F4009C8980 /* GameScene.swift */,
 				43CD02742024D8F4009C8980 /* GameViewController.swift */,
 				43CD02762024D8F4009C8980 /* Main.storyboard */,
-				43CD02792024D8F4009C8980 /* Assets.xcassets */,
 				43CD027B2024D8F4009C8980 /* LaunchScreen.storyboard */,
 				43CD027E2024D8F4009C8980 /* Info.plist */,
+				432FC51020287A7100A6C8BF /* Assets.xcassets */,
+				43DC6CF920456C1200BE3CF9 /* Object.swift */,
+				434A6E43205B53EA00D3E343 /* Platforms.swift */,
 			);
 			path = GettingOverAd;
+			sourceTree = "<group>";
+		};
+		608387C059F748D1198CA20C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90B1D9C87A6B73FE4FA52BCC /* Pods-GettingOverAd.debug.xcconfig */,
+				37821E2F5B1E9D5CEE7D1621 /* Pods-GettingOverAd.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2281D5CADB6FE90218EFAC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B96E44AE6DCAB80148A669 /* Pods_GettingOverAd.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43CD02812024D8F4009C8980 /* Build configuration list for PBXNativeTarget "GettingOverAd" */;
 			buildPhases = (
+				65F9B999F91D350DF22739C5 /* [CP] Check Pods Manifest.lock */,
 				43CD02652024D8F3009C8980 /* Sources */,
 				43CD02662024D8F3009C8980 /* Frameworks */,
 				43CD02672024D8F3009C8980 /* Resources */,
+				D7DB282145C9ECEE9B97801E /* [CP] Embed Pods Frameworks */,
+				07D4DA9250087F4F2A417531 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -100,7 +145,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Benjamin Hao";
 				TargetAttributes = {
 					43CD02682024D8F3009C8980 = {
@@ -132,23 +177,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43DC6CF8204564EC00BE3CF9 /* Player.atlas in Resources */,
+				432FC5072028730800A6C8BF /* GameplayScene.sks in Resources */,
 				43CD02782024D8F4009C8980 /* Main.storyboard in Resources */,
-				43CD026F2024D8F4009C8980 /* GameScene.sks in Resources */,
-				43CD027A2024D8F4009C8980 /* Assets.xcassets in Resources */,
+				43DC6CF7204564EC00BE3CF9 /* Enemy.atlas in Resources */,
 				43CD027D2024D8F4009C8980 /* LaunchScreen.storyboard in Resources */,
-				43CD02712024D8F4009C8980 /* Actions.sks in Resources */,
+				43DC6D3E204F5B8F00BE3CF9 /* Virus.atlas in Resources */,
+				432FC51120287A7100A6C8BF /* Assets.xcassets in Resources */,
+				43DC6CFC204572D500BE3CF9 /* FX.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07D4DA9250087F4F2A417531 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65F9B999F91D350DF22739C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GettingOverAd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7DB282145C9ECEE9B97801E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TraceLog/TraceLog.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TraceLog.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43CD02652024D8F3009C8980 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CD02732024D8F4009C8980 /* GameScene.swift in Sources */,
+				43DC6CF22044D67F00BE3CF9 /* Player.swift in Sources */,
+				43DC6CFA20456C1200BE3CF9 /* Object.swift in Sources */,
 				43CD02752024D8F4009C8980 /* GameViewController.swift in Sources */,
+				434A6E44205B53EA00D3E343 /* Platforms.swift in Sources */,
+				432FC50B2028736300A6C8BF /* GameplayScene.swift in Sources */,
 				43CD026D2024D8F4009C8980 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +294,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -196,6 +302,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -246,6 +353,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -253,6 +361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -284,14 +393,18 @@
 		};
 		43CD02822024D8F4009C8980 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B1D9C87A6B73FE4FA52BCC /* Pods-GettingOverAd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVJ7XHQ944;
 				INFOPLIST_FILE = GettingOverAd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Benjamin.GettingOverAd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,14 +412,18 @@
 		};
 		43CD02832024D8F4009C8980 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37821E2F5B1E9D5CEE7D1621 /* Pods-GettingOverAd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVJ7XHQ944;
 				INFOPLIST_FILE = GettingOverAd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Benjamin.GettingOverAd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

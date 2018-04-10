@@ -1,0 +1,14 @@
+PODS:
+  - TraceLog (2.2.0):
+    - TraceLog/Swift (= 2.2.0)
+  - TraceLog/Swift (2.2.0)
+
+DEPENDENCIES:
+  - TraceLog
+
+SPEC CHECKSUMS:
+  TraceLog: 75baa1b02b6723051b68600c40d6ac4c02ac2540
+
+PODFILE CHECKSUM: cfea673d3ab8f20c4eaece5bd03ba28eced05a2f
+
+COCOAPODS: 1.4.0
