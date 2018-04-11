@@ -49,7 +49,6 @@ class Platforms:SKNode
         let theSize:CGSize = CGSize(width: width, height: height)
         let tex:SKTexture = SKTexture(imageNamed: imageName)
         platformSprite = SKSpriteNode(texture: tex, color: SKColor.clear, size: theSize)
-        
         self.addChild(platformSprite)
         self.name = "Platform"
         
@@ -77,7 +76,7 @@ class Platforms:SKNode
 //        {
             for _ in 0 ..< Int(numberOfObjectsInLevel) {
                 
-                let obstacle:Object = Object(spreadWidth: width, spreadHeight: height)
+                let obstacle:Object = Object(spreadWidth: width - 10, spreadHeight: height)
                 addChild(obstacle)
             }
 //        }

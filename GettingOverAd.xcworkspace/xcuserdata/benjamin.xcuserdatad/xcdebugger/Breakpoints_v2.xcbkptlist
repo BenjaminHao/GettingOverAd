@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.730817"
+            timestampString = "545102240.235164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
             landmarkName = "touchesEnded(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.736517"
+            timestampString = "545102240.250769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "touchesEnded(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.741297"
+            timestampString = "545102240.264678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "760"
-            endingLineNumber = "760"
+            startingLineNumber = "817"
+            endingLineNumber = "817"
             landmarkName = "didBegin(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.746164"
+            timestampString = "545102240.278865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "672"
-            endingLineNumber = "672"
+            startingLineNumber = "719"
+            endingLineNumber = "719"
             landmarkName = "FeverAndFail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.75107"
+            timestampString = "545102240.293165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "656"
-            endingLineNumber = "656"
+            startingLineNumber = "702"
+            endingLineNumber = "702"
             landmarkName = "jumpingAndFalling()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.756066"
+            timestampString = "545102240.309931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "658"
-            endingLineNumber = "658"
+            startingLineNumber = "704"
+            endingLineNumber = "704"
             landmarkName = "FeverAndFail()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GettingOverAd/GameplayScene.swift"
-            timestampString = "545046206.760957"
+            timestampString = "545102240.325447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "673"
-            endingLineNumber = "673"
+            startingLineNumber = "720"
+            endingLineNumber = "720"
             landmarkName = "FeverAndFail()"
             landmarkType = "7">
          </BreakpointContent>

@@ -9,9 +9,6 @@
 import Foundation
 import SpriteKit
 
-var rfrogDied = false
-var gfrogDied = false
-
 class Object: SKNode
 {
     var objectSprite:SKSpriteNode = SKSpriteNode()
@@ -22,9 +19,6 @@ class Object: SKNode
     
     var facingRight:CGFloat = 0
     var facingLeft:CGFloat = 0
-    
-
-    //var birdDied = false
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -42,7 +36,7 @@ class Object: SKNode
     {
         objectSprite.removeAction(forKey: "rFrogIdleKey")
         objectSprite.run(redFrogAttactAction!, completion: {
-            if rfrogDied == false{self.rfrog_update()}
+            self.rfrog_update()
         });
         // make some delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -79,7 +73,7 @@ class Object: SKNode
         self.objectSprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 60))
 
             self.objectSprite.run(greenFrogJumpAction!, completion: {
-                if gfrogDied == false {self.objectSprite.run(greenFrogFallAction!)}
+                self.objectSprite.run(greenFrogFallAction!)
             })
     }
     
