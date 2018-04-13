@@ -72,12 +72,14 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     var jumpedPlatform: Int = 0 {
         didSet{
-            platformLabel.text = "Platforms: \(jumpedPlatform)";
+            PlayerStats.shared.setPlatformScore(jumpedPlatform)
+            platformLabel.text = "Platforms: \(PlayerStats.shared.getPlatformScore())";
         }
     }
     var score:Int = 0 {
         didSet{
-            scoreLabel.text = "Score: \(score)";
+            PlayerStats.shared.setScore(score)
+            scoreLabel.text = "Score: \(PlayerStats.shared.getScore())";
         }
     }
     
@@ -89,7 +91,11 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     override func didMove(to view: SKView)
     {
+        print(ScreenSize.height, screenWidth)
+        print(self.frame.size)
+
         self.backgroundColor = SKColor.white
+
         screenWidth = self.view!.bounds.width
         screenHeight = self.view!.bounds.height
         screenTopY = self.frame.maxY;
@@ -152,7 +158,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     }
     
     func setUpText() {
-        platformLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
+        platformLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         platformLabel.text = "Platforms: 0";
         platformLabel.fontColor = SKColor.white;
         platformLabel.horizontalAlignmentMode = .right;
@@ -166,7 +172,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         self.addChild(platformLabel);
         platformLabel.zPosition = 50
         
-        scoreLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
+        scoreLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         scoreLabel.text = "Score: 0";
         scoreLabel.fontColor = SKColor.white;
         scoreLabel.horizontalAlignmentMode = .right;
@@ -180,7 +186,8 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         self.addChild(scoreLabel);
         scoreLabel.zPosition = 50
         
-        timerLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
+        timerLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
+        timerLabel.fontSize = CGFloat.universalFont(size: 10)
         timerLabel.text = "";
         timerLabel.fontColor = SKColor.white;
         timerLabel.horizontalAlignmentMode = .right;
@@ -197,7 +204,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     func setUpRedFrogIdle()
     {
-        let atlas = SKTextureAtlas(named: "Player")
+        let atlas = SKTextureAtlas(named: "Enemy")
         var atlasTextures:[SKTexture] = []
         
         for i in 1...12
@@ -319,7 +326,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             atlasTextures.append(texture)
         }
         
-        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/20, resize: true , restore:true )
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/40, resize: true , restore:true )
         enemyDiedAction =  SKAction.repeat(atlasAnimation, count:1)
     }
     
@@ -335,7 +342,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             atlasTextures.append(texture)
         }
         
-        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/10, resize: true, restore: false)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/20, resize: true, restore: false)
         diedAction = SKAction.repeat(atlasAnimation, count:1)
     }
     
@@ -645,7 +652,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     {
         feverTime()
         let moveNodeUp = SKAction.moveBy(x: 0.0,
-                                         y: -800.0,
+                                         y: -850.0,
                                          duration: 1)
         worldNode.run(moveNodeUp)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){self.runOnce = true}
