@@ -38,10 +38,10 @@ class GameManager {
         guard let scene = getScene(toScene) else { return }
         
         if let transition = transition {
-            scene.scaleMode = .resizeFill
+            scene.scaleMode = .aspectFit
             fromScene.view?.presentScene(scene, transition: transition)
         } else {
-            scene.scaleMode = .resizeFill
+            scene.scaleMode = .aspectFit
             fromScene.view?.presentScene(scene)
         }
         
@@ -52,7 +52,11 @@ class GameManager {
         case SceneType.MainMenu:
             return MainMenu(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
         case SceneType.Gameplay:
-            return GameplayScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+            if DeviceType.isiPhoneX {
+                return GameplayScene(size: CGSize(width: 750, height: 1668))
+            } else {
+                return GameplayScene(size: CGSize(width: 750, height: 1334))
+            }
         case SceneType.Settings:
             return Settings(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
         }

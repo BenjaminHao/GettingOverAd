@@ -26,6 +26,7 @@ var VirusAction:SKAction?
 var enemyDiedAction:SKAction?
 var diedAction:SKAction?
 var chargeAction: SKAction?
+var chargingAction: SKAction?
 var chargeDoneAction: SKAction?
 var shakeAction:SKAction?
 var feverAction:SKAction?
@@ -40,9 +41,10 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     let worldNode:SKNode = SKNode();
     var virusSprite:SKSpriteNode = SKSpriteNode()
     var statusSprite:SKSpriteNode = SKSpriteNode()
-    var background_Texture = SKTexture(imageNamed: "background_1")
+    var background_Texture = SKTexture(imageNamed: "backgroundX_1")
+    //var background_Texture = SKTexture(imageNamed: "background_1")
     var backgroundTexture = SKTexture(imageNamed: "background_2")
-    var CastleTexture = SKTexture(imageNamed: "castle")
+    var CastleTexture = SKTexture(imageNamed: "castleX")
     let thePlayer:Player = Player(imageNamed:"player_idle_1");
     var scoreLabel:SKLabelNode!;
     var timerLabel:SKLabelNode!;
@@ -53,8 +55,6 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     var PlatformWidth:CGFloat = 0
     var PlatformHeight:CGFloat = 0
     var initialUnits:Int = 6
-    var screenWidth:CGFloat = 0
-    var screenHeight:CGFloat = 0
     var screenBottomY:CGFloat = 0
     var screenTopY:CGFloat = 0
     var isDead:Bool = false
@@ -91,13 +91,8 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     override func didMove(to view: SKView)
     {
-        print(ScreenSize.height, screenWidth)
-        print(self.frame.size)
-
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = SKColor.white
-
-        screenWidth = self.view!.bounds.width
-        screenHeight = self.view!.bounds.height
         screenTopY = self.frame.maxY;
         screenBottomY = self.frame.minY;
         setUpText()
@@ -111,6 +106,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         setUpenemyDiedAnimation()
         setUpDeathAnimation()
         setUpChargeAnimation()
+        setUpChargingAnimation()
         setUpShakeAction()
         setUpFeverAnimation()
         
@@ -146,7 +142,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         
         // Add world node
         addChild(worldNode)
-
+        
         // Add the player
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.worldNode.addChild(self.thePlayer)
@@ -346,6 +342,22 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         diedAction = SKAction.repeat(atlasAnimation, count:1)
     }
     
+    func setUpChargingAnimation()
+    {
+        let atlas = SKTextureAtlas(named: "FX")
+        var atlasTextures:[SKTexture] = []
+        
+        for i in 1...6
+        {
+            let textureName = "charging_\(i)"
+            let texture = atlas.textureNamed(textureName)
+            atlasTextures.append(texture)
+        }
+        
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/10, resize: true , restore:true )
+        chargingAction = SKAction.repeatForever(atlasAnimation)
+    }
+    
     func setUpChargeAnimation()
     {
         let atlas = SKTextureAtlas(named: "FX")
@@ -414,6 +426,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
                 touched = true
                 thePlayer.directionArrow.isHidden = false
                 thePlayer.chargeSprite.run(chargeAction!)
+                thePlayer.chargingSprite.run(chargingAction!, withKey: "charing")
             }
         
             fingerLocation = touch.location(in: worldNode)
@@ -456,6 +469,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         touched = false
         thePlayer.chargeSprite.run(chargeDoneAction!)
         thePlayer.chargeSprite.removeAllActions()
+        thePlayer.chargingSprite.removeAllActions()
         if (jumpPressure > 0 && thePlayer.isIdling)
         {   //如果是轻轻按下就松开则把最小蓄力值赋值给当前蓄力值
             //如果是按住不松则把上面递增的值传下来
@@ -713,7 +727,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         // world: y:-1200.49987792969
         // player:y:1693.88122558594
         let playerInScreenLocation:CGPoint = self.convert(thePlayer.position, from: self.worldNode)
-        if (playerInScreenLocation.y) > screenTopY - 200
+        if ((playerInScreenLocation.y) > screenTopY - 200) && (thePlayer.isIdling || thePlayer.isRunning)
         {
             MoveWorldNodeForPlayer()
             runOnce = false
@@ -761,7 +775,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     func restartGame(){
         let gameScene:GameplayScene = GameplayScene(size: self.size)
-        gameScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //gameScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let transition = SKTransition.fade(withDuration: 1.0)
         gameScene.scaleMode = self.scaleMode
         self.view!.presentScene(gameScene, transition: transition)

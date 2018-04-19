@@ -13,6 +13,7 @@ class Player: SKSpriteNode
 {
     var directionArrow:SKSpriteNode = SKSpriteNode(imageNamed:"arrow")
     var chargeSprite:SKSpriteNode = SKSpriteNode()
+    var chargingSprite:SKSpriteNode = SKSpriteNode()
 
     var runAction: SKAction?
     var idleAction: SKAction?
@@ -78,6 +79,10 @@ class Player: SKSpriteNode
         chargeSprite.setScale(0.5)
         self.addChild(chargeSprite)
         chargeSprite.zPosition = 15
+        chargingSprite = SKSpriteNode(imageNamed:"charge_1")
+        //chargingSprite.setScale(0.5)
+        self.addChild(chargingSprite)
+        chargingSprite.zPosition = 16
         
         // Direction stuff
         facingRight = self.xScale

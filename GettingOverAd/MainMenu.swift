@@ -88,7 +88,7 @@ class MainMenu: SKScene {
     }
     
     func startGameplay() {
-        GameManager.shared.transition(self, toScene: .Gameplay , transition: SKTransition.moveIn(with: .down, duration: 0.5))
+        GameManager.shared.transition(self, toScene: .Gameplay, transition: SKTransition.fade(withDuration: 1.0))
         
     }
     

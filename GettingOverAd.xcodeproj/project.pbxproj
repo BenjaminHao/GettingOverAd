@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		432FC51120287A7100A6C8BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 432FC51020287A7100A6C8BF /* Assets.xcassets */; };
 		434A6E44205B53EA00D3E343 /* Platforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434A6E43205B53EA00D3E343 /* Platforms.swift */; };
+		438185BF20813ED900A59744 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A43B207DFEC8001B0AF4 /* Chartboost.framework */; };
+		438185C020813EDD00A59744 /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A43D207DFEE0001B0AF4 /* CHAMoatMobileAppKit.framework */; };
 		43A2A434207DBE0A001B0AF4 /* PlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A433207DBE0A001B0AF4 /* PlayerStats.swift */; };
 		43A2A438207DED3F001B0AF4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A437207DED3F001B0AF4 /* Extension.swift */; };
 		43A2A43A207DF275001B0AF4 /* GamjaFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A2A439207DF275001B0AF4 /* GamjaFlower.ttf */; };
-		43A2A43C207DFEC9001B0AF4 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A43B207DFEC8001B0AF4 /* Chartboost.framework */; };
-		43A2A43E207DFEE1001B0AF4 /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A43D207DFEE0001B0AF4 /* CHAMoatMobileAppKit.framework */; };
 		43A2A440207E0106001B0AF4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A43F207E0106001B0AF4 /* StoreKit.framework */; };
 		43A2A442207E0110001B0AF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A441207E0110001B0AF4 /* Foundation.framework */; };
 		43A2A444207E0118001B0AF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2A443207E0118001B0AF4 /* CoreGraphics.framework */; };
@@ -29,7 +29,6 @@
 		43A2A45B207E229A001B0AF4 /* FX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43A2A452207E123A001B0AF4 /* FX.atlas */; };
 		43A2A45C207E22ED001B0AF4 /* Enemy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */; };
 		43A2A460207E304F001B0AF4 /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A45F207E304D001B0AF4 /* GameplayScene.swift */; };
-		43A2A462207E30A1001B0AF4 /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 43A2A461207E30A1001B0AF4 /* GameplayScene.sks */; };
 		43CD026D2024D8F4009C8980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD026C2024D8F4009C8980 /* AppDelegate.swift */; };
 		43CD02752024D8F4009C8980 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CD02742024D8F4009C8980 /* GameViewController.swift */; };
 		43CD02782024D8F4009C8980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CD02762024D8F4009C8980 /* Main.storyboard */; };
@@ -65,7 +64,6 @@
 		43A2A455207E15B0001B0AF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		43A2A457207E1A58001B0AF4 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
 		43A2A45F207E304D001B0AF4 /* GameplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
-		43A2A461207E30A1001B0AF4 /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
 		43CD02692024D8F3009C8980 /* GettingOverAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingOverAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD026C2024D8F4009C8980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43CD02742024D8F4009C8980 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -88,12 +86,12 @@
 			files = (
 				43A2A448207E0127001B0AF4 /* UIKit.framework in Frameworks */,
 				43A2A446207E0120001B0AF4 /* WebKit.framework in Frameworks */,
+				438185BF20813ED900A59744 /* Chartboost.framework in Frameworks */,
+				438185C020813EDD00A59744 /* CHAMoatMobileAppKit.framework in Frameworks */,
 				43A2A444207E0118001B0AF4 /* CoreGraphics.framework in Frameworks */,
 				43A2A442207E0110001B0AF4 /* Foundation.framework in Frameworks */,
 				43A2A440207E0106001B0AF4 /* StoreKit.framework in Frameworks */,
 				58136B5741D5D4EB6BA1D1B6 /* Pods_GettingOverAd.framework in Frameworks */,
-				43A2A43E207DFEE1001B0AF4 /* CHAMoatMobileAppKit.framework in Frameworks */,
-				43A2A43C207DFEC9001B0AF4 /* Chartboost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +125,6 @@
 				43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */,
 				43A2A452207E123A001B0AF4 /* FX.atlas */,
 				43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */,
-				43A2A43B207DFEC8001B0AF4 /* Chartboost.framework */,
-				43A2A43D207DFEE0001B0AF4 /* CHAMoatMobileAppKit.framework */,
 				43A2A449207E02B0001B0AF4 /* Setup.swift */,
 				43A2A44E207E0EF3001B0AF4 /* MainMenu.swift */,
 				43A2A44C207E0858001B0AF4 /* BackgroundMusic.mp3 */,
@@ -148,7 +144,6 @@
 				43A2A450207E0FC4001B0AF4 /* BDButton.swift */,
 				43A2A453207E142B001B0AF4 /* GameManager.swift */,
 				43A2A455207E15B0001B0AF4 /* Settings.swift */,
-				43A2A461207E30A1001B0AF4 /* GameplayScene.sks */,
 			);
 			path = GettingOverAd;
 			sourceTree = "<group>";
@@ -165,6 +160,8 @@
 		A2281D5CADB6FE90218EFAC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43A2A43B207DFEC8001B0AF4 /* Chartboost.framework */,
+				43A2A43D207DFEE0001B0AF4 /* CHAMoatMobileAppKit.framework */,
 				43A2A447207E0127001B0AF4 /* UIKit.framework */,
 				43A2A445207E0120001B0AF4 /* WebKit.framework */,
 				43A2A443207E0118001B0AF4 /* CoreGraphics.framework */,
@@ -241,7 +238,6 @@
 				43A2A45B207E229A001B0AF4 /* FX.atlas in Resources */,
 				43DC6CF8204564EC00BE3CF9 /* Player.atlas in Resources */,
 				43CD02782024D8F4009C8980 /* Main.storyboard in Resources */,
-				43A2A462207E30A1001B0AF4 /* GameplayScene.sks in Resources */,
 				43CD027D2024D8F4009C8980 /* LaunchScreen.storyboard in Resources */,
 				43A2A45C207E22ED001B0AF4 /* Enemy.atlas in Resources */,
 				43A2A458207E1A5A001B0AF4 /* tap.mp3 in Resources */,
@@ -466,12 +462,14 @@
 			baseConfigurationReference = 90B1D9C87A6B73FE4FA52BCC /* Pods-GettingOverAd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVJ7XHQ944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GettingOverAd",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GettingOverAd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -491,12 +489,14 @@
 			baseConfigurationReference = 37821E2F5B1E9D5CEE7D1621 /* Pods-GettingOverAd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AVJ7XHQ944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GettingOverAd",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = GettingOverAd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
