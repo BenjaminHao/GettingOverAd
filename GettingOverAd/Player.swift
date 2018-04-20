@@ -13,6 +13,7 @@ class Player: SKSpriteNode
 {
     var directionArrow:SKSpriteNode = SKSpriteNode(imageNamed:"arrow")
     var chargeSprite:SKSpriteNode = SKSpriteNode()
+    var chargingSprite:SKSpriteNode = SKSpriteNode()
 
     var runAction: SKAction?
     var idleAction: SKAction?
@@ -67,7 +68,8 @@ class Player: SKSpriteNode
         directionArrow.isHidden = true
         directionArrow.setScale(0.08)
         directionArrow.colorBlendFactor = 1
-        directionArrow.color = .gray
+        //directionArrow.color = .purple
+        directionArrow.color = UIColor(red:0.53, green:0.81, blue:0.92, alpha:1.0)
         directionArrow.zPosition = 10
         directionArrow.position = CGPoint(x:self.position.x, y:self.position.y + 20)
         self.addChild(directionArrow)
@@ -77,6 +79,10 @@ class Player: SKSpriteNode
         chargeSprite.setScale(0.5)
         self.addChild(chargeSprite)
         chargeSprite.zPosition = 15
+        chargingSprite = SKSpriteNode(imageNamed:"charge_1")
+        //chargingSprite.setScale(0.5)
+        self.addChild(chargingSprite)
+        chargingSprite.zPosition = 16
         
         // Direction stuff
         facingRight = self.xScale

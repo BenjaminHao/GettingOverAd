@@ -26,6 +26,7 @@ var VirusAction:SKAction?
 var enemyDiedAction:SKAction?
 var diedAction:SKAction?
 var chargeAction: SKAction?
+var chargingAction: SKAction?
 var chargeDoneAction: SKAction?
 var shakeAction:SKAction?
 var feverAction:SKAction?
@@ -40,9 +41,10 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     let worldNode:SKNode = SKNode();
     var virusSprite:SKSpriteNode = SKSpriteNode()
     var statusSprite:SKSpriteNode = SKSpriteNode()
-    var background_Texture = SKTexture(imageNamed: "background_1")
+    var background_Texture = SKTexture(imageNamed: "backgroundX_1")
+    //var background_Texture = SKTexture(imageNamed: "background_1")
     var backgroundTexture = SKTexture(imageNamed: "background_2")
-    var CastleTexture = SKTexture(imageNamed: "castle")
+    var CastleTexture = SKTexture(imageNamed: "castleX")
     let thePlayer:Player = Player(imageNamed:"player_idle_1");
     var scoreLabel:SKLabelNode!;
     var timerLabel:SKLabelNode!;
@@ -53,8 +55,6 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     var PlatformWidth:CGFloat = 0
     var PlatformHeight:CGFloat = 0
     var initialUnits:Int = 6
-    var screenWidth:CGFloat = 0
-    var screenHeight:CGFloat = 0
     var screenBottomY:CGFloat = 0
     var screenTopY:CGFloat = 0
     var isDead:Bool = false
@@ -70,14 +70,25 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     let playerStartingPos:CGPoint = CGPoint(x: 0, y: -400)
     
+    lazy var menuButton: BDButton = {
+        var button = BDButton(imageNamed: "SYMB_X", buttonAction: {
+            self.showAlert()
+        })
+        button.zPosition = 100
+        button.setScale(0.5)
+        return button
+    }()
+    
     var jumpedPlatform: Int = 0 {
         didSet{
-            platformLabel.text = "Platforms: \(jumpedPlatform)";
+            PlayerStats.shared.setPlatformScore(jumpedPlatform)
+            platformLabel.text = "Platforms: \(PlayerStats.shared.getPlatformScore())";
         }
     }
     var score:Int = 0 {
         didSet{
-            scoreLabel.text = "Score: \(score)";
+            PlayerStats.shared.setScore(score)
+            scoreLabel.text = "Score: \(PlayerStats.shared.getScore())";
         }
     }
     
@@ -89,9 +100,9 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     override func didMove(to view: SKView)
     {
+        // Move origin to center
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = SKColor.white
-        screenWidth = self.view!.bounds.width
-        screenHeight = self.view!.bounds.height
         screenTopY = self.frame.maxY;
         screenBottomY = self.frame.minY;
         setUpText()
@@ -105,6 +116,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         setUpenemyDiedAnimation()
         setUpDeathAnimation()
         setUpChargeAnimation()
+        setUpChargingAnimation()
         setUpShakeAction()
         setUpFeverAnimation()
         
@@ -121,8 +133,9 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy:-10)
         
-        // Move origin to center
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        // Add buttons
+        menuButton.position = CGPoint(x: frame.minX + 50, y: screenTopY - 50)
+        addChild(menuButton)
         
         // Add Virus
         virusSprite = SKSpriteNode(imageNamed:"virus_1")
@@ -135,12 +148,12 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         
         // Add fancy stuff
         addChild(statusSprite)
-        statusSprite.position = CGPoint(x: 0, y: screenTopY - 50);
+        statusSprite.position = CGPoint(x: 0, y: screenTopY - 120);
         statusSprite.zPosition = 50
         
         // Add world node
         addChild(worldNode)
-
+        
         // Add the player
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.worldNode.addChild(self.thePlayer)
@@ -152,13 +165,14 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     }
     
     func setUpText() {
-        platformLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
+        platformLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         platformLabel.text = "Platforms: 0";
         platformLabel.fontColor = SKColor.white;
-        platformLabel.horizontalAlignmentMode = .right;
+        platformLabel.fontSize = 42;
+        platformLabel.horizontalAlignmentMode = .left;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        platformLabel.position = CGPoint(x: frame.minX + 215, y: screenTopY - 100);
+        platformLabel.position = CGPoint(x: frame.minX + 30, y: screenTopY - 120);
         
         //print(scoreLabel.position);
         
@@ -166,13 +180,14 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         self.addChild(platformLabel);
         platformLabel.zPosition = 50
         
-        scoreLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
+        scoreLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         scoreLabel.text = "Score: 0";
+        scoreLabel.fontSize = 42;
         scoreLabel.fontColor = SKColor.white;
         scoreLabel.horizontalAlignmentMode = .right;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        scoreLabel.position = CGPoint(x: frame.minX + 150, y: screenTopY - 50);
+        scoreLabel.position = CGPoint(x: frame.maxX - 30, y: screenTopY - 120);
         
         //print(scoreLabel.position);
         
@@ -180,13 +195,16 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         self.addChild(scoreLabel);
         scoreLabel.zPosition = 50
         
-        timerLabel = SKLabelNode(fontNamed :"AmericanTypeWriter")
+        timerLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
+        timerLabel.fontSize = CGFloat.universalFont(size: 10)
         timerLabel.text = "";
+        timerLabel.fontSize = 36;
+
         timerLabel.fontColor = SKColor.white;
-        timerLabel.horizontalAlignmentMode = .right;
+        timerLabel.horizontalAlignmentMode = .left;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        timerLabel.position = CGPoint(x: 0, y: screenTopY - 100);
+        timerLabel.position = CGPoint(x: 0, y: screenTopY - 150);
         
         //print(scoreLabel.position);
         
@@ -197,7 +215,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     func setUpRedFrogIdle()
     {
-        let atlas = SKTextureAtlas(named: "Player")
+        let atlas = SKTextureAtlas(named: "Enemy")
         var atlasTextures:[SKTexture] = []
         
         for i in 1...12
@@ -319,7 +337,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             atlasTextures.append(texture)
         }
         
-        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/20, resize: true , restore:true )
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/40, resize: true , restore:true )
         enemyDiedAction =  SKAction.repeat(atlasAnimation, count:1)
     }
     
@@ -335,8 +353,24 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             atlasTextures.append(texture)
         }
         
-        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/10, resize: true, restore: false)
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/20, resize: true, restore: false)
         diedAction = SKAction.repeat(atlasAnimation, count:1)
+    }
+    
+    func setUpChargingAnimation()
+    {
+        let atlas = SKTextureAtlas(named: "FX")
+        var atlasTextures:[SKTexture] = []
+        
+        for i in 1...6
+        {
+            let textureName = "charging_\(i)"
+            let texture = atlas.textureNamed(textureName)
+            atlasTextures.append(texture)
+        }
+        
+        let atlasAnimation = SKAction.animate(with: atlasTextures, timePerFrame: 1.0/10, resize: true , restore:true )
+        chargingAction = SKAction.repeatForever(atlasAnimation)
     }
     
     func setUpChargeAnimation()
@@ -407,6 +441,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
                 touched = true
                 thePlayer.directionArrow.isHidden = false
                 thePlayer.chargeSprite.run(chargeAction!)
+                thePlayer.chargingSprite.run(chargingAction!, withKey: "charing")
             }
         
             fingerLocation = touch.location(in: worldNode)
@@ -444,11 +479,11 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         thePlayer.directionArrow.isHidden = true
         touched = false
         thePlayer.chargeSprite.run(chargeDoneAction!)
         thePlayer.chargeSprite.removeAllActions()
+        thePlayer.chargingSprite.removeAllActions()
         if (jumpPressure > 0 && thePlayer.isIdling)
         {   //如果是轻轻按下就松开则把最小蓄力值赋值给当前蓄力值
             //如果是按住不松则把上面递增的值传下来
@@ -466,6 +501,9 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
 //            let yForce:CGFloat = (sin(JumpRadians))
 //            thePlayer.physicsBody!.applyForce(CGVector(dx: jumpPressure*xForce, dy:jumpPressure*yForce))
             thePlayer.physicsBody!.applyImpulse(vector)
+            if jumpPressure > 50 {
+                GameManager.shared.run(SoundFileName.JumpFile.rawValue, onNode: thePlayer)
+            }
 
             jumpPressure = 0; //升空以后把蓄力值重设为0
         }
@@ -645,7 +683,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     {
         feverTime()
         let moveNodeUp = SKAction.moveBy(x: 0.0,
-                                         y: -800.0,
+                                         y: -850.0,
                                          duration: 1)
         worldNode.run(moveNodeUp)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){self.runOnce = true}
@@ -683,6 +721,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
                     score = score + 1 + bonus
                     jumpedPlatform += 1
                     currentPlatform?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+                    GameManager.shared.run(SoundFileName.LandFile.rawValue, onNode: thePlayer)
                 }
                 statusChanged = 3
 
@@ -695,6 +734,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
                     score = score + 1 + bonus
                     jumpedPlatform += 1
                     currentPlatform?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+                    GameManager.shared.run(SoundFileName.LandFile.rawValue, onNode: thePlayer)
                 }
                 statusChanged = 4
             }
@@ -706,15 +746,16 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         // world: y:-1200.49987792969
         // player:y:1693.88122558594
         let playerInScreenLocation:CGPoint = self.convert(thePlayer.position, from: self.worldNode)
-        if (playerInScreenLocation.y) > screenTopY - 200
+        if ((playerInScreenLocation.y) > screenTopY - 250) && (thePlayer.isIdling || thePlayer.isRunning)
         {
             MoveWorldNodeForPlayer()
             runOnce = false
         }
         if (playerInScreenLocation.y) < screenBottomY
         {
+            GameManager.shared.run(SoundFileName.LoseFile.rawValue, onNode: virusSprite)
             thePlayer.isDead = true
-            restartGame()
+            showAds()
             runOnce = false
         }
     }
@@ -724,6 +765,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         bonus = 1
         statusSprite.run(feverAction!, withKey: "fever")
         timerLabel.isHidden = false
+        GameManager.shared.run(SoundFileName.FeverIn.rawValue, onNode: statusSprite)
         startFeverTimer()
     }
     
@@ -732,6 +774,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         bonus = 0
         feverTimeDuration = 10
         timerLabel.isHidden = true
+        GameManager.shared.run(SoundFileName.FeverOut.rawValue, onNode: statusSprite)
         statusSprite.removeAction(forKey: "fever")
     }
     
@@ -752,9 +795,18 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         endFeverTime()
     }
     
+    func showAlert() {
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (result) in
+            GameManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .down, duration: 0.5))
+        }
+        self.scene?.isPaused = true
+        GameManager.shared.showAlert(on: self, title: "Going Home", message: "You Left This Brutal World.", preferredStyle: .alert, actions: [okAction], animated: true, delay: 0.5) {
+        }
+    }
+        
     func restartGame(){
         let gameScene:GameplayScene = GameplayScene(size: self.size)
-        gameScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //gameScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let transition = SKTransition.fade(withDuration: 1.0)
         gameScene.scaleMode = self.scaleMode
         self.view!.presentScene(gameScene, transition: transition)
@@ -762,6 +814,20 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         // TODO: Second life
         score = 0
         jumpedPlatform = 0
+    }
+    
+    func showAds() {
+//        if !PlayerStats.shared.getNoEndGameAds() {
+//            if !Chartboost.hasInterstitial(CBLocationMainMenu) {
+//                Chartboost.cacheInterstitial(CBLocationMainMenu)
+//                restartGame()
+//            } else {
+//                Chartboost.showInterstitial(CBLocationMainMenu)
+//                Chartboost.cacheInterstitial(CBLocationMainMenu)
+//            }
+//        } else {
+            restartGame()
+//        }
     }
     
     // Handle all the collision
@@ -817,6 +883,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             if (thePlayer.isFalling)
             {
                 thePlayer.physicsBody?.velocity = CGVector(dx:0, dy:350)
+                GameManager.shared.run(SoundFileName.HitFile.rawValue, onNode: worldNode)
                 contact.bodyB.categoryBitMask = BodyType.nothing.rawValue
                 contact.bodyB.isDynamic = false
                 contact.bodyB.node?.removeAllActions()
@@ -829,12 +896,13 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             else
             {
                 if(!thePlayer.isDead){
+                    GameManager.shared.run(SoundFileName.LoseFile.rawValue, onNode: worldNode)
                     thePlayer.isDead = true
                     thePlayer.removeAllChildren()
                     thePlayer.physicsBody?.isDynamic = false
                     thePlayer.run(diedAction!)
                     {
-                        self.restartGame()
+                        self.showAds()
                     }
                     self.worldNode.run(shakeAction!)
                 }
@@ -846,6 +914,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             if (thePlayer.isFalling)
             {
                 thePlayer.physicsBody?.velocity = CGVector(dx:0, dy:350)
+                GameManager.shared.run(SoundFileName.HitFile.rawValue, onNode: worldNode)
                 contact.bodyA.categoryBitMask = BodyType.nothing.rawValue
                 contact.bodyA.isDynamic = false
                 contact.bodyA.node?.removeAllActions()
@@ -858,12 +927,13 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             else
             {
                 if(!thePlayer.isDead){
+                    GameManager.shared.run(SoundFileName.LoseFile.rawValue, onNode: worldNode)
                     thePlayer.isDead = true
                     thePlayer.removeAllChildren()
                     thePlayer.physicsBody?.isDynamic = false
                     thePlayer.run(diedAction!)
                     {
-                        self.restartGame()
+                        self.showAds()
                     }
                     self.worldNode.run(shakeAction!)
                 }

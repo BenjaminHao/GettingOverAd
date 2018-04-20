@@ -71,14 +71,14 @@ class Platforms:SKNode
     // create obstacles
     func createObstacle() {
 //        let randomSpawn = arc4random_uniform(3)
-        numberOfObjectsInLevel = arc4random_uniform(maxObjectsInLevelUnit)
-//        if randomSpawn == 1 || randomSpawn == 2
-//        {
+        numberOfObjectsInLevel = arc4random_uniform(maxObjectsInLevelUnit) // 0 or 1
+        if platformSprite.size.width != 100   // short platform won't create monsters
+        {
             for _ in 0 ..< Int(numberOfObjectsInLevel) {
                 
                 let obstacle:Object = Object(spreadWidth: width - 10, spreadHeight: height)
                 addChild(obstacle)
             }
-//        }
+        }
     }
 }
