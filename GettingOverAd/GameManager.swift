@@ -25,7 +25,6 @@ class GameManager {
     private func firstLaunch() {
         if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
             
-            print("This is our first launch")
             PlayerStats.shared.setSounds(true)
             PlayerStats.shared.saveMusicVolume(0.7)
             

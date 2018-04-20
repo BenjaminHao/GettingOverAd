@@ -21,7 +21,13 @@ let kBestPlatformScore = "kBestPlatformScore"
 let kMusicVolume = "kMusicVolume"
 
 enum SoundFileName: String {
-    case TapFile = "Tap.mp3"
+    case TapFile = "tap.wav"
+    case JumpFile = "jump.mp3"
+    case LandFile = "land.wav"
+    case LoseFile = "lose.mp3"
+    case HitFile = "hit.mp3"
+    case FeverIn = "fever_appear.wav"
+    case FeverOut = "fever_dissappear.wav"
 }
 
 class PlayerStats {

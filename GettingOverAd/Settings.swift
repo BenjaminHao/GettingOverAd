@@ -9,17 +9,19 @@
 import SpriteKit
 
 class Settings:SKScene {
+    var background_Texture = SKTexture(imageNamed: "backgroundX_1")
+    var CastleTexture = SKTexture(imageNamed: "castleX")
     
     lazy var rateButton: BDButton = {
         //    var button = BDButton(imageNamed: "ButtonBlue", buttonAction: {
         //      ACTManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         //    })
-        var button = BDButton(imageNamed: "ButtonBlue", title: "Rate Me", buttonAction: {
+        var button = BDButton(imageNamed: "BTN_PLAIN (6)", title: "Rate Me", buttonAction: {
             self.handleRateMeButton()
         })
         button.zPosition = 1
-        button.scaleTo(screenWithPercentage: 0.25)
-        button.titleLabel?.fontSize = CGFloat.universalFont(size: 18)
+        button.scaleTo(screenWithPercentage: 0.23)
+        button.titleLabel?.fontSize = CGFloat.universalFont(size: 24)
         return button
     }()
     
@@ -40,12 +42,12 @@ class Settings:SKScene {
         //    var button = BDButton(imageNamed: "ButtonBlue", buttonAction: {
         //      ACTManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         //    })
-        var button = BDButton(imageNamed: "ButtonBlue", title: "Share", buttonAction: {
+        var button = BDButton(imageNamed: "BTN_PLAIN (6)", title: "Share", buttonAction: {
             self.handleShareButton()
         })
         button.zPosition = 1
-        button.scaleTo(screenWithPercentage: 0.25)
-        button.titleLabel?.fontSize = CGFloat.universalFont(size: 18)
+        button.scaleTo(screenWithPercentage: 0.23)
+        button.titleLabel?.fontSize = CGFloat.universalFont(size: 24)
         return button
     }()
     
@@ -57,16 +59,17 @@ class Settings:SKScene {
         //    var button = BDButton(imageNamed: "ButtonBlue", buttonAction: {
         //      ACTManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         //    })
-        var button = BDButton(imageNamed: "ButtonBlue", title: "Back", buttonAction: {
-            GameManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+        var button = BDButton(imageNamed: "BTN_PLAIN (6)", title: "Back", buttonAction: {
+            GameManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .up, duration: 0.5))
         })
         button.zPosition = 1
-        button.scaleTo(screenWithPercentage: 0.25)
+        button.scaleTo(screenWithPercentage: 0.2)
+        button.titleLabel?.fontSize = CGFloat.universalFont(size: 28)
         return button
     }()
     
     var volumeLabel: SKLabelNode = {
-        var label = SKLabelNode(fontNamed: "BubbleGum")
+        var label = SKLabelNode(fontNamed: "GamjaFlower-Regular")
         label.fontSize = CGFloat.universalFont(size: 36)
         label.zPosition = 1
         label.text = "\(Int(PlayerStats.shared.getMusicVolume() * 100))%"
@@ -79,7 +82,7 @@ class Settings:SKScene {
         //    var button = BDButton(imageNamed: "ButtonBlue", buttonAction: {
         //      ACTManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         //    })
-        var button = BDButton(imageNamed: "ButtonVolume", title: "-", buttonAction: {
+        var button = BDButton(imageNamed: "BTN_HORIZ_SINGLE (18)", buttonAction: {
             self.handleMinusVolumeButton()
         })
         button.zPosition = 1
@@ -96,7 +99,7 @@ class Settings:SKScene {
         //    var button = BDButton(imageNamed: "ButtonBlue", buttonAction: {
         //      ACTManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         //    })
-        var button = BDButton(imageNamed: "ButtonVolume", title: "+", buttonAction: {
+        var button = BDButton(imageNamed: "BTN_HORIZ_SINGLE (24)", buttonAction: {
             self.handlePlusVolumeButton()
         })
         button.zPosition = 1
@@ -110,8 +113,22 @@ class Settings:SKScene {
     }
     
     override func didMove(to view: SKView) {
+        //BG
+        let background = SKSpriteNode(texture: background_Texture)
+        background.zPosition = -15
+        background.position = CGPoint(x: 0 , y: 0)
+        background.setScale(0.5)
+        background.size.width = ScreenSize.width
+        let castle = SKSpriteNode(texture: CastleTexture)
+        castle.zPosition = -10
+        castle.position = CGPoint(x: 0, y: 0)
+        castle.setScale(0.5)
+        castle.size.width = ScreenSize.width * 0.75
+        
+        addChild(background)
+        addChild(castle)
+        
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backgroundColor = .orange
         
         rateButton.position = CGPoint(x: ScreenSize.width * 0.0, y: ScreenSize.height * -0.2)
         addChild(rateButton)

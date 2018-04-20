@@ -25,7 +25,6 @@
 		43A2A451207E0FC4001B0AF4 /* BDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A450207E0FC4001B0AF4 /* BDButton.swift */; };
 		43A2A454207E142B001B0AF4 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A453207E142B001B0AF4 /* GameManager.swift */; };
 		43A2A456207E15B0001B0AF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A455207E15B0001B0AF4 /* Settings.swift */; };
-		43A2A458207E1A5A001B0AF4 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43A2A457207E1A58001B0AF4 /* tap.mp3 */; };
 		43A2A45B207E229A001B0AF4 /* FX.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43A2A452207E123A001B0AF4 /* FX.atlas */; };
 		43A2A45C207E22ED001B0AF4 /* Enemy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */; };
 		43A2A460207E304F001B0AF4 /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A45F207E304D001B0AF4 /* GameplayScene.swift */; };
@@ -37,6 +36,13 @@
 		43DC6CF8204564EC00BE3CF9 /* Player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6CF6204564EC00BE3CF9 /* Player.atlas */; };
 		43DC6CFA20456C1200BE3CF9 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC6CF920456C1200BE3CF9 /* Object.swift */; };
 		43DC6D3E204F5B8F00BE3CF9 /* Virus.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */; };
+		43F1175E20893DEC00743E90 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 43F1175D20893DEC00743E90 /* tap.wav */; };
+		43F1176020893E7800743E90 /* land.wav in Resources */ = {isa = PBXBuildFile; fileRef = 43F1175F20893E7800743E90 /* land.wav */; };
+		43F117622089400700743E90 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F117612089400700743E90 /* lose.mp3 */; };
+		43F117642089402900743E90 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F117632089402900743E90 /* jump.mp3 */; };
+		43F117662089409200743E90 /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F117652089409200743E90 /* hit.mp3 */; };
+		43F117692089418A00743E90 /* fever_appear.wav in Resources */ = {isa = PBXBuildFile; fileRef = 43F117672089418A00743E90 /* fever_appear.wav */; };
+		43F1176A2089418A00743E90 /* fever_dissappear.wav in Resources */ = {isa = PBXBuildFile; fileRef = 43F117682089418A00743E90 /* fever_dissappear.wav */; };
 		58136B5741D5D4EB6BA1D1B6 /* Pods_GettingOverAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B96E44AE6DCAB80148A669 /* Pods_GettingOverAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +68,6 @@
 		43A2A452207E123A001B0AF4 /* FX.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = FX.atlas; sourceTree = "<group>"; };
 		43A2A453207E142B001B0AF4 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		43A2A455207E15B0001B0AF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		43A2A457207E1A58001B0AF4 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
 		43A2A45F207E304D001B0AF4 /* GameplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
 		43CD02692024D8F3009C8980 /* GettingOverAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingOverAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CD026C2024D8F4009C8980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +80,13 @@
 		43DC6CF6204564EC00BE3CF9 /* Player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player.atlas; sourceTree = "<group>"; };
 		43DC6CF920456C1200BE3CF9 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Virus.atlas; sourceTree = "<group>"; };
+		43F1175D20893DEC00743E90 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		43F1175F20893E7800743E90 /* land.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = land.wav; sourceTree = "<group>"; };
+		43F117612089400700743E90 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		43F117632089402900743E90 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
+		43F117652089409200743E90 /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
+		43F117672089418A00743E90 /* fever_appear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fever_appear.wav; sourceTree = "<group>"; };
+		43F117682089418A00743E90 /* fever_dissappear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fever_dissappear.wav; sourceTree = "<group>"; };
 		90B1D9C87A6B73FE4FA52BCC /* Pods-GettingOverAd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettingOverAd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B96E44AE6DCAB80148A669 /* Pods_GettingOverAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettingOverAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,7 +131,14 @@
 		43CD026B2024D8F3009C8980 /* GettingOverAd */ = {
 			isa = PBXGroup;
 			children = (
-				43A2A457207E1A58001B0AF4 /* tap.mp3 */,
+				43F1175F20893E7800743E90 /* land.wav */,
+				43F1175D20893DEC00743E90 /* tap.wav */,
+				43F117612089400700743E90 /* lose.mp3 */,
+				43F117652089409200743E90 /* hit.mp3 */,
+				43F117632089402900743E90 /* jump.mp3 */,
+				43F117672089418A00743E90 /* fever_appear.wav */,
+				43F117682089418A00743E90 /* fever_dissappear.wav */,
+				43A2A44C207E0858001B0AF4 /* BackgroundMusic.mp3 */,
 				432FC51020287A7100A6C8BF /* Assets.xcassets */,
 				43DC6CF6204564EC00BE3CF9 /* Player.atlas */,
 				43DC6CF5204564EC00BE3CF9 /* Enemy.atlas */,
@@ -127,7 +146,6 @@
 				43DC6D3D204F5B8F00BE3CF9 /* Virus.atlas */,
 				43A2A449207E02B0001B0AF4 /* Setup.swift */,
 				43A2A44E207E0EF3001B0AF4 /* MainMenu.swift */,
-				43A2A44C207E0858001B0AF4 /* BackgroundMusic.mp3 */,
 				43A2A439207DF275001B0AF4 /* GamjaFlower.ttf */,
 				43DC6CF12044D67F00BE3CF9 /* Player.swift */,
 				43A2A45F207E304D001B0AF4 /* GameplayScene.swift */,
@@ -236,14 +254,20 @@
 			files = (
 				43A2A43A207DF275001B0AF4 /* GamjaFlower.ttf in Resources */,
 				43A2A45B207E229A001B0AF4 /* FX.atlas in Resources */,
+				43F1176020893E7800743E90 /* land.wav in Resources */,
 				43DC6CF8204564EC00BE3CF9 /* Player.atlas in Resources */,
 				43CD02782024D8F4009C8980 /* Main.storyboard in Resources */,
 				43CD027D2024D8F4009C8980 /* LaunchScreen.storyboard in Resources */,
 				43A2A45C207E22ED001B0AF4 /* Enemy.atlas in Resources */,
-				43A2A458207E1A5A001B0AF4 /* tap.mp3 in Resources */,
 				43DC6D3E204F5B8F00BE3CF9 /* Virus.atlas in Resources */,
 				432FC51120287A7100A6C8BF /* Assets.xcassets in Resources */,
 				43A2A44D207E085B001B0AF4 /* BackgroundMusic.mp3 in Resources */,
+				43F117642089402900743E90 /* jump.mp3 in Resources */,
+				43F117692089418A00743E90 /* fever_appear.wav in Resources */,
+				43F117662089409200743E90 /* hit.mp3 in Resources */,
+				43F117622089400700743E90 /* lose.mp3 in Resources */,
+				43F1176A2089418A00743E90 /* fever_dissappear.wav in Resources */,
+				43F1175E20893DEC00743E90 /* tap.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

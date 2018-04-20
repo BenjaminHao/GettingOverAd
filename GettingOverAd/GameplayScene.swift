@@ -70,6 +70,15 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     let playerStartingPos:CGPoint = CGPoint(x: 0, y: -400)
     
+    lazy var menuButton: BDButton = {
+        var button = BDButton(imageNamed: "SYMB_X", buttonAction: {
+            self.showAlert()
+        })
+        button.zPosition = 100
+        button.setScale(0.5)
+        return button
+    }()
+    
     var jumpedPlatform: Int = 0 {
         didSet{
             PlayerStats.shared.setPlatformScore(jumpedPlatform)
@@ -91,6 +100,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     
     override func didMove(to view: SKView)
     {
+        // Move origin to center
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = SKColor.white
         screenTopY = self.frame.maxY;
@@ -123,8 +133,9 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx:0, dy:-10)
         
-        // Move origin to center
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        // Add buttons
+        menuButton.position = CGPoint(x: frame.minX + 50, y: screenTopY - 50)
+        addChild(menuButton)
         
         // Add Virus
         virusSprite = SKSpriteNode(imageNamed:"virus_1")
@@ -137,7 +148,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         
         // Add fancy stuff
         addChild(statusSprite)
-        statusSprite.position = CGPoint(x: 0, y: screenTopY - 50);
+        statusSprite.position = CGPoint(x: 0, y: screenTopY - 120);
         statusSprite.zPosition = 50
         
         // Add world node
@@ -157,10 +168,11 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         platformLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         platformLabel.text = "Platforms: 0";
         platformLabel.fontColor = SKColor.white;
-        platformLabel.horizontalAlignmentMode = .right;
+        platformLabel.fontSize = 42;
+        platformLabel.horizontalAlignmentMode = .left;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        platformLabel.position = CGPoint(x: frame.minX + 215, y: screenTopY - 100);
+        platformLabel.position = CGPoint(x: frame.minX + 30, y: screenTopY - 120);
         
         //print(scoreLabel.position);
         
@@ -170,11 +182,12 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         
         scoreLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         scoreLabel.text = "Score: 0";
+        scoreLabel.fontSize = 42;
         scoreLabel.fontColor = SKColor.white;
         scoreLabel.horizontalAlignmentMode = .right;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        scoreLabel.position = CGPoint(x: frame.minX + 150, y: screenTopY - 50);
+        scoreLabel.position = CGPoint(x: frame.maxX - 30, y: screenTopY - 120);
         
         //print(scoreLabel.position);
         
@@ -185,11 +198,13 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         timerLabel = SKLabelNode(fontNamed :"GamjaFlower-Regular")
         timerLabel.fontSize = CGFloat.universalFont(size: 10)
         timerLabel.text = "";
+        timerLabel.fontSize = 36;
+
         timerLabel.fontColor = SKColor.white;
-        timerLabel.horizontalAlignmentMode = .right;
+        timerLabel.horizontalAlignmentMode = .left;
         
         //scoreLabel.position = worldNode.convertPoint(CGPointMake(-100, 50), fromNode: self)
-        timerLabel.position = CGPoint(x: 0, y: screenTopY - 100);
+        timerLabel.position = CGPoint(x: 0, y: screenTopY - 150);
         
         //print(scoreLabel.position);
         
@@ -464,7 +479,6 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         thePlayer.directionArrow.isHidden = true
         touched = false
         thePlayer.chargeSprite.run(chargeDoneAction!)
@@ -487,6 +501,9 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
 //            let yForce:CGFloat = (sin(JumpRadians))
 //            thePlayer.physicsBody!.applyForce(CGVector(dx: jumpPressure*xForce, dy:jumpPressure*yForce))
             thePlayer.physicsBody!.applyImpulse(vector)
+            if jumpPressure > 50 {
+                GameManager.shared.run(SoundFileName.JumpFile.rawValue, onNode: thePlayer)
+            }
 
             jumpPressure = 0; //升空以后把蓄力值重设为0
         }
@@ -704,6 +721,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
                     score = score + 1 + bonus
                     jumpedPlatform += 1
                     currentPlatform?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+                    GameManager.shared.run(SoundFileName.LandFile.rawValue, onNode: thePlayer)
                 }
                 statusChanged = 3
 
@@ -716,6 +734,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
                     score = score + 1 + bonus
                     jumpedPlatform += 1
                     currentPlatform?.physicsBody?.categoryBitMask = BodyType.platformUsed.rawValue
+                    GameManager.shared.run(SoundFileName.LandFile.rawValue, onNode: thePlayer)
                 }
                 statusChanged = 4
             }
@@ -727,15 +746,16 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         // world: y:-1200.49987792969
         // player:y:1693.88122558594
         let playerInScreenLocation:CGPoint = self.convert(thePlayer.position, from: self.worldNode)
-        if ((playerInScreenLocation.y) > screenTopY - 200) && (thePlayer.isIdling || thePlayer.isRunning)
+        if ((playerInScreenLocation.y) > screenTopY - 250) && (thePlayer.isIdling || thePlayer.isRunning)
         {
             MoveWorldNodeForPlayer()
             runOnce = false
         }
         if (playerInScreenLocation.y) < screenBottomY
         {
+            GameManager.shared.run(SoundFileName.LoseFile.rawValue, onNode: virusSprite)
             thePlayer.isDead = true
-            restartGame()
+            showAds()
             runOnce = false
         }
     }
@@ -745,6 +765,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         bonus = 1
         statusSprite.run(feverAction!, withKey: "fever")
         timerLabel.isHidden = false
+        GameManager.shared.run(SoundFileName.FeverIn.rawValue, onNode: statusSprite)
         startFeverTimer()
     }
     
@@ -753,6 +774,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         bonus = 0
         feverTimeDuration = 10
         timerLabel.isHidden = true
+        GameManager.shared.run(SoundFileName.FeverOut.rawValue, onNode: statusSprite)
         statusSprite.removeAction(forKey: "fever")
     }
     
@@ -773,6 +795,15 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         endFeverTime()
     }
     
+    func showAlert() {
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (result) in
+            GameManager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .down, duration: 0.5))
+        }
+        self.scene?.isPaused = true
+        GameManager.shared.showAlert(on: self, title: "Going Home", message: "You Left This Brutal World.", preferredStyle: .alert, actions: [okAction], animated: true, delay: 0.5) {
+        }
+    }
+        
     func restartGame(){
         let gameScene:GameplayScene = GameplayScene(size: self.size)
         //gameScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -783,6 +814,20 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
         // TODO: Second life
         score = 0
         jumpedPlatform = 0
+    }
+    
+    func showAds() {
+//        if !PlayerStats.shared.getNoEndGameAds() {
+//            if !Chartboost.hasInterstitial(CBLocationMainMenu) {
+//                Chartboost.cacheInterstitial(CBLocationMainMenu)
+//                restartGame()
+//            } else {
+//                Chartboost.showInterstitial(CBLocationMainMenu)
+//                Chartboost.cacheInterstitial(CBLocationMainMenu)
+//            }
+//        } else {
+            restartGame()
+//        }
     }
     
     // Handle all the collision
@@ -838,6 +883,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             if (thePlayer.isFalling)
             {
                 thePlayer.physicsBody?.velocity = CGVector(dx:0, dy:350)
+                GameManager.shared.run(SoundFileName.HitFile.rawValue, onNode: worldNode)
                 contact.bodyB.categoryBitMask = BodyType.nothing.rawValue
                 contact.bodyB.isDynamic = false
                 contact.bodyB.node?.removeAllActions()
@@ -850,12 +896,13 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             else
             {
                 if(!thePlayer.isDead){
+                    GameManager.shared.run(SoundFileName.LoseFile.rawValue, onNode: worldNode)
                     thePlayer.isDead = true
                     thePlayer.removeAllChildren()
                     thePlayer.physicsBody?.isDynamic = false
                     thePlayer.run(diedAction!)
                     {
-                        self.restartGame()
+                        self.showAds()
                     }
                     self.worldNode.run(shakeAction!)
                 }
@@ -867,6 +914,7 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             if (thePlayer.isFalling)
             {
                 thePlayer.physicsBody?.velocity = CGVector(dx:0, dy:350)
+                GameManager.shared.run(SoundFileName.HitFile.rawValue, onNode: worldNode)
                 contact.bodyA.categoryBitMask = BodyType.nothing.rawValue
                 contact.bodyA.isDynamic = false
                 contact.bodyA.node?.removeAllActions()
@@ -879,12 +927,13 @@ class GameplayScene: SKScene,SKPhysicsContactDelegate
             else
             {
                 if(!thePlayer.isDead){
+                    GameManager.shared.run(SoundFileName.LoseFile.rawValue, onNode: worldNode)
                     thePlayer.isDead = true
                     thePlayer.removeAllChildren()
                     thePlayer.physicsBody?.isDynamic = false
                     thePlayer.run(diedAction!)
                     {
-                        self.restartGame()
+                        self.showAds()
                     }
                     self.worldNode.run(shakeAction!)
                 }
