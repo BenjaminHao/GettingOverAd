@@ -380,7 +380,6 @@ extension SwiftyAd: GADRewardBasedVideoAdDelegate {
 // MARK: - Callbacks
 
 private extension SwiftyAd {
-
     @objc func didRotateDevice() {
         print("SwiftyAd did rotate device")
         bannerAdView?.adSize = bannerSize

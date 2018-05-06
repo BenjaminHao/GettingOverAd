@@ -84,7 +84,9 @@ class GameViewController: UIViewController {
 ////             Show physics
 ////            view.showsPhysics = true
 //        }
-        SwiftyAd.shared.showBanner(from: self, at: .bottom) // Shows banner at the top
+        if PlayerStats.shared.getNoAds() == false{
+            SwiftyAd.shared.showBanner(from: self, at: .bottom) // Shows banner at the bottom
+        }
     }
 
 

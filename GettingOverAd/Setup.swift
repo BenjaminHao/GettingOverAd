@@ -17,3 +17,9 @@ let adMobApplicationId = "ca-app-pub-8714524939192065~7507532817"
 let adMobBannerAdUnitId = "ca-app-pub-8714524939192065/5478194874"
 let adMobInterstitialAdUnitId = "ca-app-pub-8714524939192065/4699573478"
 let adMobRewardBasedVideoAdUnitId = "ca-app-pub-8714524939192065/4843877857"
+
+let appId = "1381234208"
+let LeaderboardScoreID = "Benjamin.GettingOverAd.Scores"
+let LeaderboardPlatformID = "Benjamin.GettingOverAd.Platforms"
+let LeaderboardID = "Benjamin.GettingOverAd.BestOfAll"
+

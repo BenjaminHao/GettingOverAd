@@ -119,11 +119,13 @@ class Settings:SKScene {
         background.position = CGPoint(x: 0 , y: 0)
         background.setScale(0.5)
         background.size.width = ScreenSize.width
+        background.size.height = ScreenSize.height
         let castle = SKSpriteNode(texture: CastleTexture)
         castle.zPosition = -10
         castle.position = CGPoint(x: 0, y: 0)
         castle.setScale(0.5)
         castle.size.width = ScreenSize.width * 0.75
+        castle.size.height = ScreenSize.height
         
         addChild(background)
         addChild(castle)
