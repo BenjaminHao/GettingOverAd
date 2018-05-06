@@ -100,11 +100,17 @@ extension SKSpriteNode {
         let action4Duration = 0.05
         let action5Duration = 0.02
         let totalTimeOfPopUpAnimation = action2Duration + action3Duration + action4Duration + action5Duration
-        let action0 = SKAction.scale(to: 1.0, duration: 0.0)
+//        let action0 = SKAction.scale(to: 1.0, duration: 0.0)
+        let action0 = SKAction.scale(to: 0.1, duration: 0.0)
+
         let action1 = SKAction.wait(forDuration: TimeInterval(CGFloat(sequenceNumber) * CGFloat(totalTimeOfPopUpAnimation) + after))
-        let action2 = SKAction.scale(to: 1.9, duration: action2Duration)
-        let action3 = SKAction.scale(to: 1.7, duration: action3Duration)
-        let action4 = SKAction.scale(to: 1.85, duration: action4Duration)
+//        let action2 = SKAction.scale(to: 1.9, duration: action2Duration)
+//        let action3 = SKAction.scale(to: 1.7, duration: action3Duration)
+//        let action4 = SKAction.scale(to: 1.85, duration: action4Duration)
+//        let action5 = SKAction.scale(to: 0.0, duration: action5Duration)
+        let action2 = SKAction.scale(to: 0.75, duration: action2Duration)
+        let action3 = SKAction.scale(to: 0.25, duration: action3Duration)
+        let action4 = SKAction.scale(to: 0.5, duration: action4Duration)
         let action5 = SKAction.scale(to: 0.0, duration: action5Duration)
         let sequence = SKAction.sequence([action0, action1, action2, action3, action4, action5])
         self.run(sequence)
@@ -116,9 +122,9 @@ extension SKSpriteNode {
         let action4Duration = 0.2
         let action5Duration = 0.1
         let action2 = SKAction.scale(to: 1.2, duration: action2Duration)
-        let action3 = SKAction.scale(to: 0.95, duration: action3Duration)
-        let action4 = SKAction.scale(to: 1.1, duration: action4Duration)
-        let action5 = SKAction.scale(to: 1.0, duration: action5Duration)
+        let action3 = SKAction.scale(to: 0.5, duration: action3Duration)
+        let action4 = SKAction.scale(to: 0.9, duration: action4Duration)
+        let action5 = SKAction.scale(to: 0.7, duration: action5Duration)
         let sequence = SKAction.sequence([action2, action3, action4, action5])
         self.run(sequence)
     }
@@ -141,10 +147,10 @@ extension SKSpriteNode {
         let action3Duration = 0.12
         let action4Duration = 0.2
         let action5Duration = 0.1
-        let action2 = SKAction.scale(to: 1.6, duration: action2Duration)
-        let action3 = SKAction.scale(to: 0.95, duration: action3Duration)
-        let action4 = SKAction.scale(to: 1.3, duration: action4Duration)
-        let action5 = SKAction.scale(to: 1.0, duration: action5Duration)
+        let action2 = SKAction.scale(to: 3.0, duration: action2Duration)
+        let action3 = SKAction.scale(to: 4.0, duration: action3Duration)
+        let action4 = SKAction.scale(to: 6.0, duration: action4Duration)
+        let action5 = SKAction.scale(to: 5.0, duration: action5Duration)
         let sequence = SKAction.sequence([action2, action3, action4, action5])
         self.run(sequence)
     }
@@ -197,24 +203,3 @@ extension SKLabelNode {
         self.run(sequence)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

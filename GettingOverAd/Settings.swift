@@ -52,7 +52,7 @@ class Settings:SKScene {
     }()
     
     func handleShareButton() {
-        GameManager.shared.share(on: self, text: "I got \(PlayerStats.shared.getBestScore()) in Getting Over Ad, it is soooo hard to get 100 points!", image: UIImage(named: "ButtonPlay"), exculdeActivityTypes: [.airDrop, .postToFacebook])
+        GameManager.shared.share(on: self, text: "I got \(PlayerStats.shared.getBestScore()) in Getting Over Ad, it is soooo hard to get 100 points!", image: UIImage(named: "logo"), exculdeActivityTypes: [.airDrop, .postToTwitter, .postToFacebook, .message, .postToWeibo, .postToTencentWeibo, .saveToCameraRoll, .mail])
     }
     
     lazy var backButton: BDButton = {

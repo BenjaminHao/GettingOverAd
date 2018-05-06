@@ -7,6 +7,4 @@ target 'GettingOverAd' do
   use_frameworks!
 
   # Pods for Getting.OverAd
-	pod "TraceLog"
-
 end

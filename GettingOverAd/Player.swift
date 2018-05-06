@@ -68,8 +68,8 @@ class Player: SKSpriteNode
         directionArrow.isHidden = true
         directionArrow.setScale(0.08)
         directionArrow.colorBlendFactor = 1
-        //directionArrow.color = .purple
-        directionArrow.color = UIColor(red:0.53, green:0.81, blue:0.92, alpha:1.0)
+        directionArrow.color = .white
+        //directionArrow.color = UIColor(red:0.53, green:0.81, blue:0.92, alpha:1.0)
         directionArrow.zPosition = 10
         directionArrow.position = CGPoint(x:self.position.x, y:self.position.y + 20)
         self.addChild(directionArrow)

@@ -12,12 +12,12 @@ import SpriteKit
 let kBackgroundMusicName = "BackgroundMusic"
 let kBackgroundMusicExtension = "mp3"
 let kSoundState = "kSoundState"
-let kNoBannerAds = "kNoBannerAds"
-let kNoEndGameAds = "kNoEndGameAds"
+let kNoAds = "kNoAds"
 let kScore = "kScore"
 let kBestScore = "kBestScore"
 let kPlatformScore = "kPlatformScore"
 let kBestPlatformScore = "kBestPlatformScore"
+let kAntigens = "kAntigens"
 let kMusicVolume = "kMusicVolume"
 
 enum SoundFileName: String {
@@ -77,6 +77,15 @@ class PlayerStats {
         return  UserDefaults.standard.integer(forKey: kBestPlatformScore)
     }
     
+    func setAntigens(_ value: Int) {
+        UserDefaults.standard.set(value, forKey: kAntigens)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getAntigens() -> Int {
+        return  UserDefaults.standard.integer(forKey: kAntigens)
+    }
+    
     func setSounds(_ state: Bool) {
         UserDefaults.standard.set(state, forKey: kSoundState)
         UserDefaults.standard.synchronize()
@@ -95,21 +104,12 @@ class PlayerStats {
         return UserDefaults.standard.float(forKey: kMusicVolume)
     }
     
-    func setNoBannerAds(_ state: Bool) {
-        UserDefaults.standard.set(state, forKey: kNoBannerAds)
+    func setNoAds(_ state: Bool) {
+        UserDefaults.standard.set(state, forKey: kNoAds)
         UserDefaults.standard.synchronize()
     }
     
-    func getNoBannerAds() -> Bool {
-        return UserDefaults.standard.bool(forKey: kNoBannerAds)
-    }
-    
-    func setNoEndGameAds(_ state: Bool) {
-        UserDefaults.standard.set(state, forKey: kNoEndGameAds)
-        UserDefaults.standard.synchronize()
-    }
-    
-    func getNoEndGameAds() -> Bool {
-        return UserDefaults.standard.bool(forKey: kNoEndGameAds)
+    func getNoAds() -> Bool {
+        return UserDefaults.standard.bool(forKey: kNoAds)
     }
 }

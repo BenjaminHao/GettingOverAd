@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import GoogleMobileAds
 
 let stopBackgroundMusicNotificationName = Notification.Name("stopBackgroundMusicNotificationName")
 let startBackgroundMusicNotificationName = Notification.Name("startBackgroundMusicNotificationName")
@@ -46,7 +47,16 @@ class GameViewController: UIViewController {
 
         skView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         skView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        skView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            if #available(iOS 11.0, *) {
+                if PlayerStats.shared.getNoAds() == false
+                {
+                    skView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+                } else {
+                    skView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                }
+            } else {
+                skView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            }
         skView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 
         let scene = MainMenu(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
@@ -74,6 +84,7 @@ class GameViewController: UIViewController {
 ////             Show physics
 ////            view.showsPhysics = true
 //        }
+        SwiftyAd.shared.showBanner(from: self, at: .bottom) // Shows banner at the top
     }
 
 
@@ -133,4 +144,5 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+
 }

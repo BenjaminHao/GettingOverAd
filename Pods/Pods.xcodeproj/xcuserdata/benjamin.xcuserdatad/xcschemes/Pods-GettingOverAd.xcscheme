@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB3831DF7B8EEC0BAC8F9CC6BF0249C1"
+               BlueprintIdentifier = "3FF5BED9CB016F9B77CDFD3F8FB0B9B9"
                BuildableName = "Pods_GettingOverAd.framework"
                BlueprintName = "Pods-GettingOverAd"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AB3831DF7B8EEC0BAC8F9CC6BF0249C1"
+            BlueprintIdentifier = "3FF5BED9CB016F9B77CDFD3F8FB0B9B9"
             BuildableName = "Pods_GettingOverAd.framework"
             BlueprintName = "Pods-GettingOverAd"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -132,5 +132,4 @@ class BDButton: SKNode {
         button.size.width = screenWidth * screenWithPercentage
         button.size.height = button.size.width * aspectRatio
     }
-    
 }

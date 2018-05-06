@@ -20,6 +20,9 @@ class GameManager {
     
     public func launch() {
         firstLaunch()
+        if PlayerStats.shared.getNoAds() == true {
+            SwiftyAd.shared.isRemoved = true
+        }
     }
     
     private func firstLaunch() {

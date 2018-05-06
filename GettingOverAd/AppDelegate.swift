@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        setupChartboost()
-        
+        GADMobileAds.configure(withApplicationID: adMobApplicationId)
+        SwiftyAd.shared.setup(
+            withBannerID:    adMobBannerAdUnitId,
+            interstitialID:  adMobInterstitialAdUnitId,
+            rewardedVideoID: adMobRewardBasedVideoAdUnitId
+        )
+        //setupChartboost()
+
         GameManager.shared.launch()
-        
         return true
     }
 

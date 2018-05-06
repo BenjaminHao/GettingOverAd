@@ -3,95 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		104F12753243B494EB3E778E717A96E7 /* TraceLog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A79C20EE5D993180C258860CF7227E22 /* TraceLog-dummy.m */; };
-		164C8A95031ADF851DE8C3FFAB99D057 /* Pods-GettingOverAd-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 437A8F6CD7AE9ABE92E629B9C004765B /* Pods-GettingOverAd-dummy.m */; };
-		257CC79B42AFB358EEA1F147D6FC13A4 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F3EE69F2D44E3F0B52CDE930FDB0FF /* LogLevel.swift */; };
-		2D1E0AFBFF76E41C0CDD1196535A8ACB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7994FD426E891F984BC93CD8936CB9C /* Configuration.swift */; };
-		41BD00E637F7BB3994CE8482617F7018 /* RuntimeContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26A599A735C89ADAE83E9BB3D044E2 /* RuntimeContext.swift */; };
-		46220DE4EDAFC88418566399A61DF06C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		631BBFA11AC299E83BC46ECF013E8AC6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E01A12DFFDCDF2D2C2A27D6457EE65E /* Environment.swift */; };
-		8C760B7D3251C703D850BFA893DCF24E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D6183A5DC9420B79BCA02B27CA26B8 /* Logger.swift */; };
-		8F3739430F36312FDFA65238AF40EE90 /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472AFFAE61A9D2FB49979E86A2C794D /* Writer.swift */; };
-		915B93713184A38B7A283A7259754334 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		94F6ED4E2BF5F487F671CA6F9DD52DE2 /* StaticContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ED53773460189BE7ED018D0DF516AC /* StaticContext.swift */; };
-		9AE8E659ABC3C8338C791A3E5064622C /* Pods-GettingOverAd-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08738385AE5C36D9B44D01EBBA02F5EA /* Pods-GettingOverAd-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDFE7B3C63D643CF9DE0CF49990F1388 /* TraceLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AA55BB7F18E674B2ACAA782D4BCDB /* TraceLog.swift */; };
-		D8A1B7A5F76F39AD21261A6D040CE6CB /* TraceLog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69BC08180CC42883980743E90F0438EB /* TraceLog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E3046BD351B3756D52954AB69C4144C6 /* ConsoleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691D8631535546C5B2915A8B045FCC6 /* ConsoleWriter.swift */; };
+		0AD647B3B17D6B16BBE1D253713BCD55 /* Pods-GettingOverAd-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5944F2CAE8A68375ACDB778B7664F477 /* Pods-GettingOverAd-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EF98ECE768BC9DE64CF07E07FC3CE1C /* Pods-GettingOverAd-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83538C04C8B544BE875D4074123F44FC /* Pods-GettingOverAd-dummy.m */; };
+		514DD34BA2CC2DF6A2ECC96DCBFC278E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		11E876E189ED04970E43838BB6671DC6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEEC064A6799DCAD8D43701CF89A21AA;
-			remoteInfo = TraceLog;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		060800BC708ED26ACFA1812673A0DC03 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08738385AE5C36D9B44D01EBBA02F5EA /* Pods-GettingOverAd-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GettingOverAd-umbrella.h"; sourceTree = "<group>"; };
-		0A322266DFA9FD35FC6ECEE02B116B04 /* Pods-GettingOverAd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GettingOverAd.debug.xcconfig"; sourceTree = "<group>"; };
-		0C1AA55BB7F18E674B2ACAA782D4BCDB /* TraceLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TraceLog.swift; path = Sources/TraceLog/TraceLog.swift; sourceTree = "<group>"; };
-		0C5BD5E71CFD7D2F9307D35DA6D05B2E /* Pods-GettingOverAd-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GettingOverAd-frameworks.sh"; sourceTree = "<group>"; };
-		17FAA8F91D5C87C80B6590AC765B670A /* TraceLog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TraceLog-prefix.pch"; sourceTree = "<group>"; };
-		1D20C342887F23220347DD7412C291DA /* Pods-GettingOverAd-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GettingOverAd-resources.sh"; sourceTree = "<group>"; };
-		2E01A12DFFDCDF2D2C2A27D6457EE65E /* Environment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Sources/TraceLog/Environment.swift; sourceTree = "<group>"; };
-		418E0D5BE79EC807662916FD34A796B6 /* TraceLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TraceLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		437A8F6CD7AE9ABE92E629B9C004765B /* Pods-GettingOverAd-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GettingOverAd-dummy.m"; sourceTree = "<group>"; };
-		4BCCD84EB8E3C7EC6069564891EDC33F /* TraceLog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TraceLog.xcconfig; sourceTree = "<group>"; };
-		4DD5233E8313281D5ED5BCBD23A65D53 /* Pods-GettingOverAd-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GettingOverAd-acknowledgements.plist"; sourceTree = "<group>"; };
+		0FE230EA7B5110CAA4AC2CA43BD3DB4C /* Pods-GettingOverAd.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GettingOverAd.modulemap"; sourceTree = "<group>"; };
+		593C3D3A11740B7AA2BFB992D60D9348 /* Pods-GettingOverAd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GettingOverAd.debug.xcconfig"; sourceTree = "<group>"; };
+		5944F2CAE8A68375ACDB778B7664F477 /* Pods-GettingOverAd-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GettingOverAd-umbrella.h"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		69BC08180CC42883980743E90F0438EB /* TraceLog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TraceLog-umbrella.h"; sourceTree = "<group>"; };
-		70DCB5F3793CEF9CAF16A00DD3D42127 /* TraceLog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TraceLog.modulemap; sourceTree = "<group>"; };
-		7691D8631535546C5B2915A8B045FCC6 /* ConsoleWriter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsoleWriter.swift; path = Sources/TraceLog/ConsoleWriter.swift; sourceTree = "<group>"; };
-		76D6183A5DC9420B79BCA02B27CA26B8 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/TraceLog/Logger.swift; sourceTree = "<group>"; };
-		808EE82FDC767C98FEC01B03794026E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B26A599A735C89ADAE83E9BB3D044E2 /* RuntimeContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuntimeContext.swift; path = Sources/TraceLog/RuntimeContext.swift; sourceTree = "<group>"; };
-		A249F4D5BFD3616805C119FD61369957 /* Pods-GettingOverAd-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GettingOverAd-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A472AFFAE61A9D2FB49979E86A2C794D /* Writer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Writer.swift; path = Sources/TraceLog/Writer.swift; sourceTree = "<group>"; };
-		A7994FD426E891F984BC93CD8936CB9C /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/TraceLog/Configuration.swift; sourceTree = "<group>"; };
-		A79C20EE5D993180C258860CF7227E22 /* TraceLog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TraceLog-dummy.m"; sourceTree = "<group>"; };
-		C0A929BAC5A92CDCABAA49F8968D2BA2 /* Pods-GettingOverAd.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GettingOverAd.modulemap"; sourceTree = "<group>"; };
-		C6F9ED5B76F2CF02B1468F1883F5BE7E /* Pods-GettingOverAd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GettingOverAd.release.xcconfig"; sourceTree = "<group>"; };
-		D9ED53773460189BE7ED018D0DF516AC /* StaticContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StaticContext.swift; path = Sources/TraceLog/StaticContext.swift; sourceTree = "<group>"; };
-		E8D24B695E45A5F2B844098F9BD94F18 /* Pods_GettingOverAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettingOverAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1F3EE69F2D44E3F0B52CDE930FDB0FF /* LogLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Sources/TraceLog/LogLevel.swift; sourceTree = "<group>"; };
+		6A2B764F163ED96F842E7FCE0C2076F8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B2D5A8D69A1F29E4C94AEB94A82C781 /* Pods-GettingOverAd-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GettingOverAd-acknowledgements.plist"; sourceTree = "<group>"; };
+		83538C04C8B544BE875D4074123F44FC /* Pods-GettingOverAd-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GettingOverAd-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		958CBFC54103C3C327434B46E5317762 /* Pods-GettingOverAd-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GettingOverAd-resources.sh"; sourceTree = "<group>"; };
+		959E304E5E432A478715973CE5889F49 /* Pods_GettingOverAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GettingOverAd.framework; path = "Pods-GettingOverAd.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0256DC0113E27833331140631A80913 /* Pods-GettingOverAd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GettingOverAd.release.xcconfig"; sourceTree = "<group>"; };
+		CB37638D33B10B5BF3FB91752D94CF09 /* Pods-GettingOverAd-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GettingOverAd-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F1392823221AE1FFC65103139997B0FB /* Pods-GettingOverAd-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GettingOverAd-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		93E09FF814163A6081F6A45A4B120BA5 /* Frameworks */ = {
+		BF8776A83E047015292E19F569BB503A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915B93713184A38B7A283A7259754334 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBB1A0678B5D77E92750112778292FD3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46220DE4EDAFC88418566399A61DF06C /* Foundation.framework in Frameworks */,
+				514DD34BA2CC2DF6A2ECC96DCBFC278E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72F3A0148C7A779298A573CBA0938AA5 /* Pods */ = {
+		6709975BDB186240D489F0B69D23E61E /* Pods-GettingOverAd */ = {
 			isa = PBXGroup;
 			children = (
-				91369DB7C7BCCEC69752AD7EF9FF93C3 /* TraceLog */,
+				6A2B764F163ED96F842E7FCE0C2076F8 /* Info.plist */,
+				0FE230EA7B5110CAA4AC2CA43BD3DB4C /* Pods-GettingOverAd.modulemap */,
+				CB37638D33B10B5BF3FB91752D94CF09 /* Pods-GettingOverAd-acknowledgements.markdown */,
+				6B2D5A8D69A1F29E4C94AEB94A82C781 /* Pods-GettingOverAd-acknowledgements.plist */,
+				83538C04C8B544BE875D4074123F44FC /* Pods-GettingOverAd-dummy.m */,
+				F1392823221AE1FFC65103139997B0FB /* Pods-GettingOverAd-frameworks.sh */,
+				958CBFC54103C3C327434B46E5317762 /* Pods-GettingOverAd-resources.sh */,
+				5944F2CAE8A68375ACDB778B7664F477 /* Pods-GettingOverAd-umbrella.h */,
+				593C3D3A11740B7AA2BFB992D60D9348 /* Pods-GettingOverAd.debug.xcconfig */,
+				B0256DC0113E27833331140631A80913 /* Pods-GettingOverAd.release.xcconfig */,
 			);
-			name = Pods;
+			name = "Pods-GettingOverAd";
+			path = "Target Support Files/Pods-GettingOverAd";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -99,46 +63,9 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				72F3A0148C7A779298A573CBA0938AA5 /* Pods */,
-				8F002160BD03E1437C7E3FE3A4130CF3 /* Products */,
+				F17EE3E64EC04B4DD8BB743E3C73B3D7 /* Products */,
 				D62AC94739E91537B0B428DC370C1147 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8F002160BD03E1437C7E3FE3A4130CF3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E8D24B695E45A5F2B844098F9BD94F18 /* Pods_GettingOverAd.framework */,
-				418E0D5BE79EC807662916FD34A796B6 /* TraceLog.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		91369DB7C7BCCEC69752AD7EF9FF93C3 /* TraceLog */ = {
-			isa = PBXGroup;
-			children = (
-				C4606E8D88399BB3C31FA54F5945FC5D /* Support Files */,
-				C5A7B7C2C0AED5450EB33883B521851F /* Swift */,
-			);
-			path = TraceLog;
-			sourceTree = "<group>";
-		};
-		AFFA5085E42707276FD8616E315AC0E0 /* Pods-GettingOverAd */ = {
-			isa = PBXGroup;
-			children = (
-				060800BC708ED26ACFA1812673A0DC03 /* Info.plist */,
-				C0A929BAC5A92CDCABAA49F8968D2BA2 /* Pods-GettingOverAd.modulemap */,
-				A249F4D5BFD3616805C119FD61369957 /* Pods-GettingOverAd-acknowledgements.markdown */,
-				4DD5233E8313281D5ED5BCBD23A65D53 /* Pods-GettingOverAd-acknowledgements.plist */,
-				437A8F6CD7AE9ABE92E629B9C004765B /* Pods-GettingOverAd-dummy.m */,
-				0C5BD5E71CFD7D2F9307D35DA6D05B2E /* Pods-GettingOverAd-frameworks.sh */,
-				1D20C342887F23220347DD7412C291DA /* Pods-GettingOverAd-resources.sh */,
-				08738385AE5C36D9B44D01EBBA02F5EA /* Pods-GettingOverAd-umbrella.h */,
-				0A322266DFA9FD35FC6ECEE02B116B04 /* Pods-GettingOverAd.debug.xcconfig */,
-				C6F9ED5B76F2CF02B1468F1883F5BE7E /* Pods-GettingOverAd.release.xcconfig */,
-			);
-			name = "Pods-GettingOverAd";
-			path = "Target Support Files/Pods-GettingOverAd";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -147,36 +74,6 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C4606E8D88399BB3C31FA54F5945FC5D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				808EE82FDC767C98FEC01B03794026E8 /* Info.plist */,
-				70DCB5F3793CEF9CAF16A00DD3D42127 /* TraceLog.modulemap */,
-				4BCCD84EB8E3C7EC6069564891EDC33F /* TraceLog.xcconfig */,
-				A79C20EE5D993180C258860CF7227E22 /* TraceLog-dummy.m */,
-				17FAA8F91D5C87C80B6590AC765B670A /* TraceLog-prefix.pch */,
-				69BC08180CC42883980743E90F0438EB /* TraceLog-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TraceLog";
-			sourceTree = "<group>";
-		};
-		C5A7B7C2C0AED5450EB33883B521851F /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				A7994FD426E891F984BC93CD8936CB9C /* Configuration.swift */,
-				7691D8631535546C5B2915A8B045FCC6 /* ConsoleWriter.swift */,
-				2E01A12DFFDCDF2D2C2A27D6457EE65E /* Environment.swift */,
-				76D6183A5DC9420B79BCA02B27CA26B8 /* Logger.swift */,
-				F1F3EE69F2D44E3F0B52CDE930FDB0FF /* LogLevel.swift */,
-				9B26A599A735C89ADAE83E9BB3D044E2 /* RuntimeContext.swift */,
-				D9ED53773460189BE7ED018D0DF516AC /* StaticContext.swift */,
-				0C1AA55BB7F18E674B2ACAA782D4BCDB /* TraceLog.swift */,
-				A472AFFAE61A9D2FB49979E86A2C794D /* Writer.swift */,
-			);
-			name = Swift;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -190,66 +87,48 @@
 		D62AC94739E91537B0B428DC370C1147 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFFA5085E42707276FD8616E315AC0E0 /* Pods-GettingOverAd */,
+				6709975BDB186240D489F0B69D23E61E /* Pods-GettingOverAd */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F17EE3E64EC04B4DD8BB743E3C73B3D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				959E304E5E432A478715973CE5889F49 /* Pods_GettingOverAd.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9F1FEA00765632FDDDD01AAC7A344824 /* Headers */ = {
+		B8F1A2A7AC790A737A2094EFDB74A443 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AE8E659ABC3C8338C791A3E5064622C /* Pods-GettingOverAd-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4B8E2FF8E9042A378149931C1584300 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8A1B7A5F76F39AD21261A6D040CE6CB /* TraceLog-umbrella.h in Headers */,
+				0AD647B3B17D6B16BBE1D253713BCD55 /* Pods-GettingOverAd-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AB3831DF7B8EEC0BAC8F9CC6BF0249C1 /* Pods-GettingOverAd */ = {
+		3FF5BED9CB016F9B77CDFD3F8FB0B9B9 /* Pods-GettingOverAd */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 457CEC5F7B6717A48022DC561264350E /* Build configuration list for PBXNativeTarget "Pods-GettingOverAd" */;
+			buildConfigurationList = 9148709E0E5CE05466E93D53AA140413 /* Build configuration list for PBXNativeTarget "Pods-GettingOverAd" */;
 			buildPhases = (
-				59712910EB294452DC7F4E2395350B05 /* Sources */,
-				93E09FF814163A6081F6A45A4B120BA5 /* Frameworks */,
-				9F1FEA00765632FDDDD01AAC7A344824 /* Headers */,
+				FA1F538BFE0743EA9427544983AD0CF7 /* Sources */,
+				BF8776A83E047015292E19F569BB503A /* Frameworks */,
+				B8F1A2A7AC790A737A2094EFDB74A443 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B64D76B289CD807F9F2161CDF699C81D /* PBXTargetDependency */,
 			);
 			name = "Pods-GettingOverAd";
 			productName = "Pods-GettingOverAd";
-			productReference = E8D24B695E45A5F2B844098F9BD94F18 /* Pods_GettingOverAd.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EEEC064A6799DCAD8D43701CF89A21AA /* TraceLog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B852BEB1B1ED6E7814A6804C0E554776 /* Build configuration list for PBXNativeTarget "TraceLog" */;
-			buildPhases = (
-				0F3515927AB21ABFCA5EF6573F54DD0D /* Sources */,
-				FBB1A0678B5D77E92750112778292FD3 /* Frameworks */,
-				E4B8E2FF8E9042A378149931C1584300 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TraceLog;
-			productName = TraceLog;
-			productReference = 418E0D5BE79EC807662916FD34A796B6 /* TraceLog.framework */;
+			productReference = 959E304E5E432A478715973CE5889F49 /* Pods_GettingOverAd.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -258,7 +137,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -269,58 +148,33 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8F002160BD03E1437C7E3FE3A4130CF3 /* Products */;
+			productRefGroup = F17EE3E64EC04B4DD8BB743E3C73B3D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB3831DF7B8EEC0BAC8F9CC6BF0249C1 /* Pods-GettingOverAd */,
-				EEEC064A6799DCAD8D43701CF89A21AA /* TraceLog */,
+				3FF5BED9CB016F9B77CDFD3F8FB0B9B9 /* Pods-GettingOverAd */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0F3515927AB21ABFCA5EF6573F54DD0D /* Sources */ = {
+		FA1F538BFE0743EA9427544983AD0CF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D1E0AFBFF76E41C0CDD1196535A8ACB /* Configuration.swift in Sources */,
-				E3046BD351B3756D52954AB69C4144C6 /* ConsoleWriter.swift in Sources */,
-				631BBFA11AC299E83BC46ECF013E8AC6 /* Environment.swift in Sources */,
-				8C760B7D3251C703D850BFA893DCF24E /* Logger.swift in Sources */,
-				257CC79B42AFB358EEA1F147D6FC13A4 /* LogLevel.swift in Sources */,
-				41BD00E637F7BB3994CE8482617F7018 /* RuntimeContext.swift in Sources */,
-				94F6ED4E2BF5F487F671CA6F9DD52DE2 /* StaticContext.swift in Sources */,
-				104F12753243B494EB3E778E717A96E7 /* TraceLog-dummy.m in Sources */,
-				BDFE7B3C63D643CF9DE0CF49990F1388 /* TraceLog.swift in Sources */,
-				8F3739430F36312FDFA65238AF40EE90 /* Writer.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59712910EB294452DC7F4E2395350B05 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				164C8A95031ADF851DE8C3FFAB99D057 /* Pods-GettingOverAd-dummy.m in Sources */,
+				0EF98ECE768BC9DE64CF07E07FC3CE1C /* Pods-GettingOverAd-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		B64D76B289CD807F9F2161CDF699C81D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TraceLog;
-			target = EEEC064A6799DCAD8D43701CF89A21AA /* TraceLog */;
-			targetProxy = 11E876E189ED04970E43838BB6671DC6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		496FBAE61BAC481E1F1020E64DF1406F /* Debug */ = {
+		9F52DF4A6AA8597BFFF06AC39267CB24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A322266DFA9FD35FC6ECEE02B116B04 /* Pods-GettingOverAd.debug.xcconfig */;
+			baseConfigurationReference = 593C3D3A11740B7AA2BFB992D60D9348 /* Pods-GettingOverAd.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -340,18 +194,16 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GettingOverAd;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		621AB785940626574F07364CB14760E1 /* Release */ = {
+		CE6BB864FB202B78BB66ACCAACAA0513 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -361,6 +213,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -382,6 +235,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -402,79 +256,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		82F5937027AFB124880B450CF80E45C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6F9ED5B76F2CF02B1468F1883F5BE7E /* Pods-GettingOverAd.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GettingOverAd/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GettingOverAd;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B53D157AD159F14DE55326719D81C9F8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BCCD84EB8E3C7EC6069564891EDC33F /* TraceLog.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TraceLog/TraceLog-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TraceLog/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TraceLog/TraceLog.modulemap";
-				PRODUCT_NAME = TraceLog;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B57C09D404C607DDE283C5C44183B2A1 /* Debug */ = {
+		CF76A09C3B09DA1B0DB6FD5DB2C3A2A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -484,6 +271,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -505,6 +293,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -529,17 +318,18 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		CBEA4A340A20023256B817DFBC0229CC /* Debug */ = {
+		DBF5F46D923D6C40A1DFC96CA2B77FDA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BCCD84EB8E3C7EC6069564891EDC33F /* TraceLog.xcconfig */;
+			baseConfigurationReference = B0256DC0113E27833331140631A80913 /* Pods-GettingOverAd.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -549,23 +339,25 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TraceLog/TraceLog-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TraceLog/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-GettingOverAd/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TraceLog/TraceLog.modulemap";
-				PRODUCT_NAME = TraceLog;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GettingOverAd/Pods-GettingOverAd.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -573,26 +365,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B57C09D404C607DDE283C5C44183B2A1 /* Debug */,
-				621AB785940626574F07364CB14760E1 /* Release */,
+				CF76A09C3B09DA1B0DB6FD5DB2C3A2A2 /* Debug */,
+				CE6BB864FB202B78BB66ACCAACAA0513 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		457CEC5F7B6717A48022DC561264350E /* Build configuration list for PBXNativeTarget "Pods-GettingOverAd" */ = {
+		9148709E0E5CE05466E93D53AA140413 /* Build configuration list for PBXNativeTarget "Pods-GettingOverAd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				496FBAE61BAC481E1F1020E64DF1406F /* Debug */,
-				82F5937027AFB124880B450CF80E45C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B852BEB1B1ED6E7814A6804C0E554776 /* Build configuration list for PBXNativeTarget "TraceLog" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBEA4A340A20023256B817DFBC0229CC /* Debug */,
-				B53D157AD159F14DE55326719D81C9F8 /* Release */,
+				9F52DF4A6AA8597BFFF06AC39267CB24 /* Debug */,
+				DBF5F46D923D6C40A1DFC96CA2B77FDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
